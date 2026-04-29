@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jawaban Benar - Coret Ceria</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR NAVIGASI BARU - VERTIKAL -->
+    <div class="sidebar-nav" id="sidebarNav">
+      <!-- Hamburger toggle button (hidden on desktop, shown on mobile) -->
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+
+      <!-- Navigation menu container -->
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
+        <button
+          class="btn-nav btn-music music-playing"
+          id="musicToggle"
+          data-music-toggle
+          title="Musik Hidup (Klik untuk Matikan)"
+        >
+          🎵
+        </button>
+        <button class="btn-nav btn-back" title="Kembali">←</button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content susun-success-main">
+      <!-- BACKGROUND DECORATIONS -->
+      <div class="bg-tree left"></div>
+      <div class="bg-tree right"></div>
+      <div class="bg-building"></div>
+
+      <!-- SUCCESS PAGE -->
+      <section class="susun-success-screen">
+        <!-- CELEBRATION ANIMATION -->
+        <div class="celebration-container">
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+          <div class="confetti"></div>
+        </div>
+
+        <!-- SUCCESS TITLE BOARD -->
+        <div class="susun-success-title-board">
+          <h1 class="susun-success-title">🎉 BENAR! 🎉</h1>
+        </div>
+
+        <!-- SUCCESS CONTENT -->
+        <div class="susun-success-content">
+          <!-- BENDA ICON -->
+          <div class="success-icon-large" id="successIconSusun">🪑</div>
+
+          <!-- WORD DISPLAY (A-B-C FORMAT) -->
+          <div class="susun-spelling-container">
+            <div class="spelling-label">Ejaan:</div>
+            <div class="spelling-display" id="spellingDisplay">
+              <!-- Akan di-generate: K - U - R - S - I -->
+            </div>
+          </div>
+
+          <!-- ANSWER DISPLAY -->
+          <div class="answer-display-susun">
+            <p class="answer-label">Jawaban Anda:</p>
+            <p class="answer-text" id="answerTextSusun">KURSI</p>
+          </div>
+
+          <!-- AUDIO BUTTON -->
+          <button
+            class="btn-audio-susun"
+            id="btnAudioSusun"
+            title="Dengarkan Ejaan"
+          >
+            <span class="audio-icon">🔊</span>
+            <span class="audio-text">Dengarkan Ejaan</span>
+          </button>
+
+          <!-- BUTTONS -->
+          <div class="susun-success-actions">
+            <button class="btn-next-susun" id="btnNextSusun">
+              ➜ Lanjut Kata Berikutnya
+            </button>
+            <button class="btn-again-susun" id="btnAgainSusun">
+              🔄 Susun Lagi
+            </button>
+          </div>
+        </div>
+
+        <!-- KARAKTER DI SUDUT KANAN BAWAH -->
+        <div class="character-corner">
+          <img src="../images/char1.png" alt="Karakter" class="character-img" />
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="../js/shared.js"></script>
+    <script src="../js/persistent-music.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/susun-success.js"></script>
+  </body>
+</html>

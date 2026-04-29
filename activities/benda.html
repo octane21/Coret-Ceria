@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengenalan Benda - Coret Ceria</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR NAVIGASI BARU - VERTIKAL -->
+    <div class="sidebar-nav" id="sidebarNav">
+      <!-- Hamburger toggle button (hidden on desktop, shown on mobile) -->
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+
+      <!-- Navigation menu container -->
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
+        <button
+          class="btn-nav btn-music music-playing"
+          id="musicToggle"
+          data-music-toggle
+          title="Musik Hidup (Klik untuk Matikan)"
+        >
+          🎵
+        </button>
+        <button class="btn-nav btn-back" title="Kembali">←</button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="benda-main">
+      <!-- BENDA SELECTION SCREEN -->
+      <section id="bendaScreen" class="benda-screen">
+        <!-- MAIN BOARD DENGAN BENDA & SYLLABLES -->
+        <div class="benda-main-board">
+          <!-- BENDA ICON -->
+          <div class="benda-icon-large" id="bendaIconLarge">🪑</div>
+
+          <!-- BENDA NAME (FULL WORD) -->
+          <div class="benda-word-display" id="bendaWordDisplay">Kursi</div>
+
+          <!-- SYLLABLES BREAKDOWN -->
+          <div class="benda-syllables-container" id="bendaSyllablesContainer">
+            <!-- Akan di-generate oleh JavaScript -->
+          </div>
+
+          <!-- LISTEN BUTTON -->
+          <!-- LISTEN BUTTON -->
+          <button class="btn-listen-benda" id="btnListenBenda">
+            🔊 Dengarkan
+          </button>
+
+          <!-- TOMBOL KEMBALI SUDAH DIPINDAHKAN KE SIDEBAR -->
+        </div>
+
+        <!-- BENDA ITEMS GRID DI BAWAH -->
+        <div class="benda-grid-container">
+          <div class="benda-grid">
+            <div class="benda-btn" data-benda="apel">
+              <div class="benda-icon">🍎</div>
+              <div class="benda-name">Apel</div>
+            </div>
+
+            <div class="benda-btn" data-benda="bola">
+              <div class="benda-icon">⚽</div>
+              <div class="benda-name">Bola</div>
+            </div>
+
+            <div class="benda-btn" data-benda="cangkir">
+              <div class="benda-icon">☕</div>
+              <div class="benda-name">Cangkir</div>
+            </div>
+
+            <div class="benda-btn" data-benda="dompet">
+              <div class="benda-icon">👝</div>
+              <div class="benda-name">Dompet</div>
+            </div>
+
+            <div class="benda-btn" data-benda="ekor">
+              <div class="benda-icon">🐿️</div>
+              <div class="benda-name">Ekor</div>
+            </div>
+
+            <div class="benda-btn" data-benda="film">
+              <div class="benda-icon">🎬</div>
+              <div class="benda-name">Film</div>
+            </div>
+
+            <div class="benda-btn" data-benda="gitar">
+              <div class="benda-icon">🎸</div>
+              <div class="benda-name">Gitar</div>
+            </div>
+
+            <div class="benda-btn" data-benda="hati">
+              <div class="benda-icon">❤️</div>
+              <div class="benda-name">Hati</div>
+            </div>
+
+            <div class="benda-btn" data-benda="ikan">
+              <div class="benda-icon">🐠</div>
+              <div class="benda-name">Ikan</div>
+            </div>
+
+            <div class="benda-btn" data-benda="jam">
+              <div class="benda-icon">⏰</div>
+              <div class="benda-name">Jam</div>
+            </div>
+
+            <div class="benda-btn" data-benda="kunci">
+              <div class="benda-icon">🔑</div>
+              <div class="benda-name">Kunci</div>
+            </div>
+
+            <div class="benda-btn" data-benda="lilin">
+              <div class="benda-icon">🕯️</div>
+              <div class="benda-name">Lilin</div>
+            </div>
+
+            <div class="benda-btn" data-benda="mobil">
+              <div class="benda-icon">🚗</div>
+              <div class="benda-name">Mobil</div>
+            </div>
+
+            <div class="benda-btn" data-benda="nanas">
+              <div class="benda-icon">🍍</div>
+              <div class="benda-name">Nanas</div>
+            </div>
+
+            <div class="benda-btn" data-benda="orang">
+              <div class="benda-icon">🪛</div>
+              <div class="benda-name">Obeng</div>
+            </div>
+
+            <div class="benda-btn" data-benda="pisang">
+              <div class="benda-icon">🍌</div>
+              <div class="benda-name">Pisang</div>
+            </div>
+
+            <div class="benda-btn" data-benda="qamis">
+              <div class="benda-icon">🪵</div>
+              <div class="benda-name">Kayu</div>
+            </div>
+
+            <div class="benda-btn" data-benda="rumah">
+              <div class="benda-icon">🏠</div>
+              <div class="benda-name">Rumah</div>
+            </div>
+
+            <div class="benda-btn" data-benda="sepatu">
+              <div class="benda-icon">👞</div>
+              <div class="benda-name">Sepatu</div>
+            </div>
+
+            <div class="benda-btn" data-benda="topi">
+              <div class="benda-icon">🎩</div>
+              <div class="benda-name">Topi</div>
+            </div>
+
+            <div class="benda-btn" data-benda="udang">
+              <div class="benda-icon">🦐</div>
+              <div class="benda-name">Udang</div>
+            </div>
+
+            <div class="benda-btn" data-benda="voli">
+              <div class="benda-icon">🏐</div>
+              <div class="benda-name">Voli</div>
+            </div>
+
+            <div class="benda-btn" data-benda="waris">
+              <div class="benda-icon">🍳</div>
+              <div class="benda-name">Wajan</div>
+            </div>
+
+            <div class="benda-btn" data-benda="xerox">
+              <div class="benda-icon">📋</div>
+              <div class="benda-name">Xerox</div>
+            </div>
+
+            <div class="benda-btn" data-benda="yogurt">
+              <div class="benda-icon">🥛</div>
+              <div class="benda-name">Yogurt</div>
+            </div>
+
+            <div class="benda-btn" data-benda="zebra">
+              <div class="benda-icon">🦓</div>
+              <div class="benda-name">Zebra</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KARAKTER DI SUDUT KANAN BAWAH -->
+        <!-- <div class="character-corner">
+          <img src="../images/char1.png" alt="Karakter" class="character-img" />
+        </div> -->
+      </section>
+
+      <!-- BENDA SPELLING SCREEN -->
+      <section
+        class="screen"
+        id="bendaSpellingScreen"
+        class="benda-spelling-screen"
+      >
+        <!-- BACK BUTTON -->
+        <button class="btn-back-spelling" onclick="backToSelection()">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+                <feOffset dx="0" dy="2" result="offsetblur" />
+                <feComponentTransfer>
+                  <feFuncA type="linear" slope="0.3" />
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <path
+              d="M75 35 L50 35 L50 20 Q50 15 45 18 L15 45 Q10 50 15 55 L45 82 Q50 85 50 80 L50 65 L75 65 Q85 65 85 50 Q85 35 75 35 Z"
+              fill="#333"
+            />
+
+            <path
+              d="M73 38 L48 38 L48 25 L19 50 L48 75 L48 62 L73 62 Q82 62 82 50 Q82 38 73 38 Z"
+              fill="white"
+            />
+
+            <path
+              d="M71 40 L46 40 L46 30 L23 50 L46 70 L46 60 L71 60 Q79 60 79 50 Q79 40 71 40 Z"
+              fill="#FF9800"
+            />
+
+            <path
+              d="M70 42 L46 42 L46 35 L28 50 L46 65 L46 42 Q60 42 70 42"
+              fill="white"
+              fill-opacity="0.4"
+            />
+          </svg>
+        </button>
+
+        <!-- DISPLAY BOARD -->
+        <div class="spelling-board">
+          <!-- BENDA IMAGE -->
+          <div class="spelling-image-container">
+            <div class="spelling-image" id="spellingImage">🪑</div>
+          </div>
+
+          <!-- BENDA NAME AND SPELLING -->
+          <div class="spelling-content">
+            <h2 class="spelling-benda-name" id="spellingBendaName">Kursi</h2>
+
+            <!-- SYLLABLES -->
+            <div class="spelling-syllables" id="syllablesContainer">
+              <!-- Akan di-generate oleh JavaScript -->
+            </div>
+
+            <!-- LISTEN BUTTON -->
+            <button class="btn-listen-spelling" id="btnListenSpelling">
+              🔊 Dengarkan
+            </button>
+          </div>
+        </div>
+
+        <!-- KARAKTER DI SUDUT KANAN BAWAH -->
+        <div class="character-corner">
+          <img src="../images/char1.png" alt="Karakter" class="character-img" />
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="../js/shared.js"></script>
+    <script src="../js/persistent-music.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/benda.js"></script>
+  </body>
+</html>

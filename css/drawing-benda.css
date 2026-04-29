@@ -1,0 +1,2013 @@
+/* ========================================
+   DRAWING BENDA - MAIN STYLES
+   ======================================== */
+
+.drawing-benda-main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* padding: 100px; */
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   SELECTION SCREEN
+   ======================================== */
+
+#drawingBendaSelectionScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 40px 20px;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.drawing-title-board {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.drawing-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ff5722; /* Oranye kemerahan */
+  text-align: center;
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  background-clip: text;
+  margin: 0;
+  animation: slideInDown 0.6s ease-out;
+}
+
+.btn-back-drawing {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+  transition: all 0.3s ease;
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.btn-back-drawing:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 107, 107, 0.4);
+}
+
+.btn-back-drawing svg {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Drawing Benda Grid */
+.drawing-benda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  padding: 40px;
+  background: linear-gradient(135deg, #fffbf0 0%, #f5f9ff 100%);
+  border-radius: 30px;
+  border: 4px dashed #ffb347;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    inset 0 0 30px rgba(255, 179, 71, 0.1),
+    -5px -5px 15px rgba(255, 255, 255, 0.5),
+    5px 5px 15px rgba(102, 126, 234, 0.2);
+  animation: slideInUp 0.6s ease-out;
+  position: relative;
+  overflow: visible;
+}
+
+.drawing-benda-grid::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 20%;
+  width: 100px;
+  height: 20px;
+  background: linear-gradient(90deg, #ffb347, #ffd280);
+  border-radius: 50%;
+  opacity: 0.3;
+  filter: blur(5px);
+}
+
+.drawing-benda-grid::after {
+  /* content: "📓"; */
+  position: absolute;
+  top: -20px;
+  right: 30px;
+  font-size: 35px;
+  opacity: 0.6;
+  animation: float 3s ease-in-out infinite;
+}
+
+.drawing-benda-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* padding: 20px; */
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+  border: 3px solid #667eea;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: scaleIn 0.5s ease-out;
+  position: relative;
+  box-shadow:
+    0 5px 15px rgba(102, 126, 234, 0.2),
+    0 0 0 2px rgba(255, 179, 71, 0.3),
+    -2px -2px 10px rgba(255, 255, 255, 0.6);
+  transform: rotate(var(--rotate-angle, 0deg));
+}
+
+.drawing-benda-item::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(circle at 30% 30%, #ffd700, #ffb347);
+  border-radius: 50%;
+  box-shadow:
+    0 2px 8px rgba(255, 179, 71, 0.4),
+    inset -1px -1px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: popIn 0.5s ease-out forwards;
+  animation-delay: inherit;
+}
+
+.drawing-benda-item::after {
+  content: "✓";
+  position: absolute;
+  top: -5px;
+  right: -3px;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  opacity: 0;
+  z-index: 1;
+}
+
+.drawing-benda-item:nth-child(1) {
+  animation-delay: 0.1s;
+  --rotate-angle: -3deg;
+}
+.drawing-benda-item:nth-child(2) {
+  animation-delay: 0.15s;
+  --rotate-angle: 2deg;
+}
+.drawing-benda-item:nth-child(3) {
+  animation-delay: 0.2s;
+  --rotate-angle: -2deg;
+}
+.drawing-benda-item:nth-child(4) {
+  animation-delay: 0.25s;
+  --rotate-angle: 3deg;
+}
+.drawing-benda-item:nth-child(5) {
+  animation-delay: 0.3s;
+  --rotate-angle: -1deg;
+}
+.drawing-benda-item:nth-child(6) {
+  animation-delay: 0.35s;
+  --rotate-angle: 2.5deg;
+}
+.drawing-benda-item:nth-child(7) {
+  animation-delay: 0.4s;
+  --rotate-angle: -3.5deg;
+}
+.drawing-benda-item:nth-child(8) {
+  animation-delay: 0.45s;
+  --rotate-angle: 1.5deg;
+}
+
+.drawing-benda-item:hover {
+  transform: translateY(-15px) scale(1.08) rotate(0deg);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow:
+    0 20px 50px rgba(102, 126, 234, 0.4),
+    0 0 0 3px rgba(255, 179, 71, 0.5),
+    -5px -5px 20px rgba(255, 255, 255, 0.4),
+    5px 5px 20px rgba(102, 126, 234, 0.3);
+  border-color: #764ba2;
+}
+
+.drawing-benda-icon {
+  font-size: 50px;
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: bounce 0.5s ease-out;
+}
+
+.drawing-benda-icon img{
+    width: 50px;
+}
+.drawing-benda-item:hover .drawing-benda-icon {
+  font-size: 60px;
+  animation: spin 0.3s ease-out;
+}
+
+.drawing-benda-name {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.drawing-benda-item:hover .drawing-benda-name {
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   DRAWING SCREEN
+   ======================================== */
+
+#drawingBendaGameScreen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.drawing-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  /* margin-top: 100px; */
+  margin-bottom: 20px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back-game {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-back-game:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
+}
+
+.drawing-game-title {
+  flex: 1;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.drawing-info {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Main Drawing Container */
+.drawing-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  flex: 1;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+/* Reference Section */
+.drawing-reference-section,
+.drawing-canvas-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.drawing-reference-box {
+  flex: 1;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.drawing-reference-box svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.drawing-reference-box .reference-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+/* Canvas Section */
+.drawing-canvas-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drawing-canvas {
+  flex: 1;
+  background: white;
+  border: 3px solid white;
+  border-radius: 20px;
+  cursor: crosshair;
+  min-height: 300px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  display: block;
+  width: 100%;
+}
+
+/* Controls Section */
+.drawing-controls-section {
+  display: flex;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+}
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.control-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  min-width: 100px;
+}
+
+.color-palette-drawing {
+  display: flex;
+  gap: 5px;
+}
+
+.color-input {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.brush-slider {
+  flex: 1;
+  min-width: 100px;
+  cursor: pointer;
+}
+
+#brushSizeLabel {
+  font-size: 14px;
+  color: #666;
+  min-width: 40px;
+}
+
+.action-buttons-drawing {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.btn-action-drawing {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-clear {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+  color: white;
+}
+
+.btn-clear:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.btn-undo {
+  background: linear-gradient(135deg, #ffa500 0%, #ffb703 100%);
+  color: white;
+}
+
+.btn-undo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+}
+
+.btn-finish {
+  background: linear-gradient(135deg, #51cf66 0%, #69db7c 100%);
+  color: white;
+}
+
+.btn-finish:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(81, 207, 102, 0.3);
+}
+
+/* ========================================
+   COMPLETION MODAL
+   ======================================== */
+
+.drawing-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawing-modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.success-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.modal-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 10px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modal-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0 0 0;
+}
+
+.modal-body {
+  margin-bottom: 30px;
+}
+
+.drawing-result-preview {
+  background: #f5f5f5;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawing-result-preview canvas {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 10px;
+  background: white;
+}
+
+.completion-message {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin: 15px 0;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-modal-drawing {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.btn-retry {
+  background: linear-gradient(135deg, #ffa500 0%, #ffb703 100%);
+  color: white;
+}
+
+.btn-retry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(255, 165, 0, 0.3);
+}
+
+.btn-next {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* ========================================
+   CHARACTER
+   ======================================== */
+
+.character-corner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.character-img {
+  width: 100px;
+  height: 100px;
+  opacity: 0.8;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   DRAWING COMPLETION MODAL
+   ======================================== */
+
+.drawing-completion-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.drawing-completion-modal.active {
+  display: flex;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal-overlay-drawing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.modal-content-drawing {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 30px;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUpSwing 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 5px solid #4ecdc4;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header-drawing {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.modal-title-drawing {
+  font-size: 48px;
+  font-weight: bold;
+  color: #4ecdc4;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-body-drawing {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Benda Display */
+.benda-display-drawing {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f7ff 100%);
+  border-radius: 20px;
+  border-left: 5px solid #4ecdc4;
+}
+
+.benda-name-drawing {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+/* Drawing Preview */
+.drawing-preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preview-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.result-preview {
+  border: 3px solid #ddd;
+  border-radius: 15px;
+  padding: 10px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.result-preview canvas {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ejaan Section */
+.ejaan-section-drawing {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border: 3px solid #d4af37;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+.ejaan-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ejaan-display-drawing {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff6b35;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Completion Text */
+.completion-text-drawing {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.6;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 10px;
+}
+
+/* Audio Button */
+.btn-audio-drawing {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+  border: 3px solid white;
+  border-radius: 15px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(78, 205, 196, 0.3);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-audio-drawing:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.5);
+}
+
+.btn-audio-drawing:active {
+  transform: translateY(-1px);
+}
+
+/* Modal Footer */
+.modal-footer-drawing {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.btn-action-modal {
+  border: none;
+  border-radius: 15px;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 150px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-retry {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-retry:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-next {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+}
+
+.btn-next:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .drawing-title {
+    font-size: 36px;
+  }
+
+  .drawing-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .drawing-controls-section {
+    flex-direction: column;
+  }
+
+  .controls-group {
+    width: 100%;
+  }
+
+  .action-buttons-drawing {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .drawing-title {
+    margin-top: 100px;
+  }
+
+  #drawingBendaSelectionScreen {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .drawing-title {
+    font-size: 28px;
+  }
+
+  .drawing-benda-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .drawing-toolbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .drawing-game-title {
+    font-size: 20px;
+  }
+
+  .drawing-container {
+    padding: 0 10px;
+  }
+
+  .drawing-reference-box,
+  .drawing-canvas {
+    min-height: 250px;
+  }
+
+  .controls-group {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .control-label {
+    min-width: auto;
+  }
+
+  .action-buttons-drawing {
+    width: 100%;
+  }
+
+  .character-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .modal-content {
+    padding: 25px;
+  }
+
+  .modal-header h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drawing-title {
+    font-size: 20px;
+  }
+
+  .btn-back-drawing {
+    width: 60px;
+    height: 60px;
+  }
+
+  .drawing-benda-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .drawing-benda-item {
+    padding: 15px 10px;
+  }
+
+  .drawing-benda-icon {
+    font-size: 35px;
+  }
+
+  .drawing-benda-name {
+    font-size: 12px;
+  }
+
+  .drawing-toolbar {
+    padding: 10px 15px;
+  }
+
+  .btn-back-game {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  .drawing-game-title {
+    font-size: 16px;
+  }
+
+  .section-label {
+    font-size: 13px;
+  }
+
+  .drawing-reference-box,
+  .drawing-canvas {
+    min-height: 200px;
+  }
+
+  .drawing-controls-section {
+    padding: 15px;
+  }
+
+  .controls-group {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .control-label {
+    width: 100%;
+  }
+
+  .color-input {
+    width: 35px;
+    height: 35px;
+  }
+
+  .action-buttons-drawing {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .btn-action-drawing {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .character-img {
+    width: 60px;
+    height: 60px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .success-icon {
+    font-size: 60px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+  }
+
+  .btn-modal-drawing {
+    padding: 10px 15px;
+  }
+}
+
+/* ========================================
+   MODAL BENDA STYLING (Ejaan & Icon)
+   ======================================== */
+
+.drawing-benda-display {
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 15px 0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.benda-icon-large {
+  font-size: 100px;
+  line-height: 1;
+  margin-bottom: 15px;
+  display: block;
+  animation: popIn 0.5s ease-out;
+}
+
+.benda-name-large {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  font-family: "Fredoka", "Segoe UI", sans-serif;
+}
+
+.ejaan-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  color: white;
+  text-align: center;
+}
+
+.ejaan-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0 0 10px 0;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.ejaan-display {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Monaco", "Courier New", monospace;
+  letter-spacing: 3px;
+  word-spacing: 8px;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.btn-speak-benda {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  width: 100%;
+  max-width: 250px;
+}
+
+.btn-speak-benda:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-speak-benda:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+.btn-speak-benda:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET (768px)
+   ======================================== */
+
+@media (max-width: 768px) {
+  .drawing-benda-main {
+    padding: 200px;
+  }
+  .benda-icon-large {
+    font-size: 70px;
+    margin-bottom: 12px;
+  }
+
+  .benda-name-large {
+    font-size: 24px;
+  }
+
+  .ejaan-section {
+    padding: 16px;
+    margin: 15px 0;
+  }
+
+  .ejaan-display {
+    font-size: 18px;
+    letter-spacing: 2px;
+    word-spacing: 6px;
+    padding: 10px 12px;
+  }
+
+  .btn-speak-benda {
+    padding: 11px 20px;
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .drawing-benda-display {
+    margin-bottom: 20px;
+    padding: 12px 0;
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE (480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+  .benda-icon-large {
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+
+  .benda-name-large {
+    font-size: 20px;
+  }
+
+  .ejaan-section {
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 10px;
+  }
+
+  .ejaan-label {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .ejaan-display {
+    font-size: 16px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    padding: 8px 10px;
+    border-radius: 6px;
+  }
+
+  .btn-speak-benda {
+    padding: 10px 18px;
+    font-size: 14px;
+    max-width: 100%;
+    margin: 12px auto;
+  }
+
+  .drawing-benda-display {
+    margin-bottom: 15px;
+    padding: 10px 0;
+  }
+
+  .modal-body {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
+
+/* ========================================
+   RESPONSIVE MEDIA QUERIES - TABLET (1024px)
+   ======================================== */
+
+@media (max-width: 1024px) {
+  /* Selection Screen */
+  #drawingBendaSelectionScreen {
+    padding: 30px 15px;
+    gap: 25px;
+  }
+
+  .drawing-title-board {
+    max-width: 800px;
+    gap: 15px;
+  }
+
+  .drawing-title {
+    font-size: 36px;
+  }
+
+  .btn-back-drawing {
+    width: 70px;
+    height: 70px;
+  }
+
+  .btn-back-drawing svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .drawing-benda-grid {
+    max-width: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .drawing-benda-item {
+    padding: 15px;
+    gap: 8px;
+  }
+
+  .drawing-benda-icon {
+    font-size: 40px;
+  }
+
+  .drawing-benda-name {
+    font-size: 14px;
+  }
+
+  /* Drawing Game Screen */
+  #drawingBendaGameScreen {
+    padding: 15px;
+  }
+
+  .drawing-toolbar {
+    gap: 15px;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+  }
+
+  .btn-back-game {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .drawing-game-title {
+    font-size: 22px;
+  }
+
+  .drawing-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+  }
+
+  .drawing-reference-box {
+    min-height: 250px;
+    padding: 15px;
+  }
+
+  .drawing-canvas {
+    min-height: 250px;
+  }
+
+  .section-label {
+    font-size: 14px;
+  }
+
+  .drawing-controls-section {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .controls-group {
+    min-width: 180px;
+  }
+
+  .control-label {
+    font-size: 13px;
+    min-width: 80px;
+  }
+
+  .btn-action-drawing {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE MEDIA QUERIES - TABLET (768px)
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Selection Screen */
+  #drawingBendaSelectionScreen {
+    padding: 20px 10px;
+    gap: 20px;
+    min-height: auto;
+  }
+
+  .drawing-title-board {
+    max-width: 100%;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .drawing-title {
+    font-size: 28px;
+  }
+
+  .btn-back-drawing {
+    width: 60px;
+    height: 60px;
+  }
+
+  .btn-back-drawing svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .drawing-benda-grid {
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .drawing-benda-item {
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .drawing-benda-icon {
+    font-size: 35px;
+  }
+
+  .drawing-benda-name {
+    font-size: 12px;
+  }
+
+  /* Drawing Game Screen */
+  #drawingBendaGameScreen {
+    padding: 10px;
+  }
+
+  .drawing-toolbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+  }
+
+  .btn-back-game {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  .drawing-game-title {
+    font-size: 18px;
+    flex-basis: 100%;
+    order: 1;
+  }
+
+  .drawing-info {
+    font-size: 12px;
+  }
+
+  /* Drawing Container - Switch to single column */
+  .drawing-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .drawing-reference-section,
+  .drawing-canvas-section {
+    gap: 8px;
+  }
+
+  .section-label {
+    font-size: 13px;
+  }
+
+  .drawing-reference-box {
+    min-height: 200px;
+    padding: 12px;
+  }
+
+  .drawing-canvas {
+    min-height: 250px;
+  }
+
+  /* Controls Section */
+  .drawing-controls-section {
+    gap: 12px;
+    padding: 12px;
+    flex-direction: column;
+  }
+
+  .controls-group {
+    width: 100%;
+    min-width: auto;
+    flex-wrap: wrap;
+  }
+
+  .control-label {
+    font-size: 12px;
+    min-width: 60px;
+  }
+  .drawing-toolbar {
+    margin-top: 100px;
+  }
+  .color-palette-drawing {
+    flex: 1;
+  }
+
+  .color-input {
+    width: 35px;
+    height: 35px;
+  }
+
+  .brush-slider {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  #brushSizeLabel {
+    font-size: 12px;
+  }
+
+  .action-buttons-drawing {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .btn-action-drawing {
+    flex: 1;
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  /* Modal - Tablet Adjustments */
+  .drawing-modal {
+    padding: 15px;
+  }
+
+  .modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}
+
+/* ========================================
+   RESPONSIVE MEDIA QUERIES - MOBILE (480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+  /* SIDEBARS - Hide on mobile */
+  .sidebar-left,
+  .sidebar-right {
+    display: none;
+  }
+
+  /* Selection Screen */
+  #drawingBendaSelectionScreen {
+    padding: 15px 8px;
+    gap: 15px;
+    min-height: auto;
+  }
+
+  .drawing-title-board {
+    max-width: 100%;
+    gap: 8px;
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+
+  .drawing-title {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  .btn-back-drawing {
+    width: 50px;
+    height: 50px;
+  }
+
+  .btn-back-drawing svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .drawing-benda-grid {
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+    padding: 10px 8px;
+    border-radius: 20px;
+  }
+
+  .drawing-benda-item {
+    padding: 10px 8px;
+    gap: 5px;
+    border-radius: 15px;
+    border-width: 2px;
+  }
+
+  .drawing-benda-icon {
+    font-size: 30px;
+  }
+
+  .drawing-benda-name {
+    font-size: 11px;
+  }
+
+  .drawing-benda-item:hover {
+    transform: translateY(-8px) scale(1.03);
+  }
+
+  /* Drawing Game Screen */
+  #drawingBendaGameScreen {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .drawing-toolbar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: 15px;
+  }
+
+  .btn-back-game {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .drawing-game-title {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .drawing-info {
+    font-size: 11px;
+  }
+
+  /* Drawing Container - Full column layout */
+  .drawing-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding: 0;
+  }
+
+  .drawing-reference-section,
+  .drawing-canvas-section {
+    gap: 6px;
+  }
+
+  .section-label {
+    font-size: 12px;
+  }
+
+  .drawing-reference-box {
+    min-height: 150px;
+    padding: 10px;
+    border-radius: 15px;
+  }
+
+  .drawing-reference-box .reference-image {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .drawing-canvas {
+    min-height: 220px;
+    border-radius: 15px;
+    border-width: 2px;
+  }
+
+  /* Controls Section - Stack vertically */
+  .drawing-controls-section {
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 15px;
+    flex-direction: column;
+  }
+
+  .controls-group {
+    width: 100%;
+    min-width: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .control-label {
+    font-size: 11px;
+    min-width: auto;
+    flex-basis: 100%;
+  }
+
+  .color-palette-drawing {
+    gap: 4px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .color-input {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+
+  .brush-slider {
+    width: 100%;
+    min-width: auto;
+  }
+
+  #brushSizeLabel {
+    font-size: 11px;
+  }
+
+  .action-buttons-drawing {
+    width: 100%;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .btn-action-drawing {
+    flex: 1;
+    min-width: calc(50% - 3px);
+    padding: 10px 6px;
+    font-size: 11px;
+    border-radius: 10px;
+  }
+
+  /* Modal - Mobile */
+  .drawing-modal {
+    padding: 0;
+  }
+
+  .modal-content {
+    width: 95vw;
+    max-height: 95vh;
+    border-radius: 15px;
+    max-width: 100%;
+  }
+
+  .modal-header {
+    padding: 12px 15px;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .modal-body {
+    padding: 12px 15px;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .modal-footer {
+    padding: 10px 15px;
+    gap: 8px;
+  }
+
+  .btn-modal-drawing {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  /* Drawing Result Preview */
+  .drawing-result-preview {
+    margin: 10px 0;
+  }
+
+  .drawing-result-preview canvas {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Benda Display Modal */
+  .benda-icon-large {
+    font-size: 50px;
+    margin-bottom: 8px;
+  }
+
+  .benda-name-large {
+    font-size: 18px;
+  }
+
+  .drawing-benda-display {
+    margin-bottom: 12px;
+    padding: 8px 0;
+    border-bottom-width: 2px;
+  }
+
+  .ejaan-section {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+  }
+
+  .ejaan-label {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .ejaan-display {
+    font-size: 14px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    padding: 8px 10px;
+    border-radius: 6px;
+  }
+
+  .btn-speak-benda {
+    padding: 10px 16px;
+    font-size: 13px;
+    max-width: 100%;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  .completion-message {
+    margin: 8px 0;
+  }
+
+  .completion-message p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+/* ========================================
+   RESPONSIVE MEDIA QUERIES - SMALL MOBILE (360px)
+   ======================================== */
+
+@media (max-width: 360px) {
+  /* Selection Screen */
+  .drawing-title {
+    font-size: 18px;
+  }
+
+  .btn-back-drawing {
+    width: 45px;
+    height: 45px;
+  }
+
+  .btn-back-drawing svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .drawing-benda-grid {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .drawing-benda-item {
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .drawing-benda-icon {
+    font-size: 26px;
+  }
+
+  .drawing-benda-name {
+    font-size: 10px;
+  }
+
+  /* Drawing Game Screen */
+  .drawing-toolbar {
+    padding: 8px 10px;
+  }
+
+  .drawing-game-title {
+    font-size: 14px;
+  }
+
+  .btn-back-game {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .drawing-canvas {
+    min-height: 200px;
+  }
+
+  .btn-action-drawing {
+    min-width: 100%;
+    padding: 8px 4px;
+    font-size: 10px;
+  }
+
+  .color-input {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Modal */
+  .modal-content {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .benda-icon-large {
+    font-size: 40px;
+  }
+
+  .benda-name-large {
+    font-size: 16px;
+  }
+
+  .ejaan-display {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .btn-speak-benda {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}

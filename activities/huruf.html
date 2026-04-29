@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />    <!-- SCRIPTS -->
+    <script src="../js/shared.js"></script>
+    <script src="../js/persistent-music.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/huruf.js"></script>
+  </body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Huruf - Coret Ceria</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR NAVIGASI BARU - VERTIKAL -->
+    <div class="sidebar-nav" id="sidebarNav">
+      <!-- Hamburger toggle button (hidden on desktop, shown on mobile) -->
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+
+      <!-- Navigation menu container -->
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
+        <button class="btn-nav btn-music music-playing" id="musicToggle" data-music-toggle title="Musik Hidup (Klik untuk Matikan)">🎵</button>
+        <button class="btn-nav btn-back" title="Kembali">←</button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content letters-main">
+      <!-- BACKGROUND DECORATIONS -->
+      <div class="bg-tree left"></div>
+      <div class="bg-tree right"></div>
+      <div class="bg-building"></div>
+
+      <!-- BELAJAR HURUF ACTIVITY -->
+      <section class="screen active" id="hurufScreen" class="letters-screen">
+        <!-- HANGING BANNER DENGAN HURUF -->
+        <div class="header-banner">
+          <div class="banner-hanging">
+            <div class="hanging-rod left"></div>
+            <div class="hanging-rod right"></div>
+            <div class="banner-box">
+              <div class="banner-content" id="hurufBannerContent">
+                <div class="huruf-display">
+                  <div class="huruf-besar">A</div>
+                  <div class="huruf-nama">Huruf A</div>
+                  <!-- <button class="btn-suara">🔊 Dengarkan</button> -->
+                </div>
+              </div>
+              <!-- TOMBOL KEMBALI SUDAH DIPINDAHKAN KE SIDEBAR -->
+            </div>
+            <div class="flag-left"></div>
+            <div class="flag-right"></div>
+          </div>
+        </div>
+
+        <!-- GRID HURUF DI BAWAH -->
+        <div class="letters-grid-container">
+          <!-- Switch Button -->
+          <div class="letters-switch-container">
+            <button id="btnSwitchCase" class="btn-switch-case">
+              Huruf Besar
+            </button>
+          </div>
+          <div class="huruf-grid">
+            <!-- Grid huruf akan di-generate oleh JavaScript -->
+          </div>
+        </div>
+
+        <!-- KARAKTER DI SUDUT KANAN BAWAH -->
+        <div class="character-corner">
+          <img src="../images/char1.png" alt="Karakter" class="character-img" />
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="../js/shared.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/letters.js"></script>
+  </body>
+</html>

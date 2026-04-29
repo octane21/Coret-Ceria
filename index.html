@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coret Ceria - Belajar Huruf</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR NAVIGASI UNTUK HOME - VERTIKAL -->
+    <div class="sidebar-nav" id="sidebarNav">
+      <!-- Hamburger toggle button (hidden on desktop, shown on mobile) -->
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+
+      <!-- Navigation menu container -->
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
+        <button
+          class="btn-nav btn-music music-playing"
+          id="musicToggle"
+          data-music-toggle
+          title="Musik Hidup (Klik untuk Matikan)"
+        >
+          🎵
+        </button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- HOME SCREEN -->
+      <section id="homeScreen" class="screen active">
+        <div class="sky"></div>
+
+        <!-- HEADER BANNER -->
+        <div class="header-banner">
+          <div class="banner-hanging">
+            <div class="hanging-rod left"></div>
+            <div class="hanging-rod right"></div>
+            <div class="banner-box">
+              <!-- Original content -->
+              <div class="banner-content" id="bannerContent">
+                <div class="logo-blocks">
+                  <div class="block-letter a">A</div>
+                  <div class="block-letter b">B</div>
+                  <div class="block-letter c">C</div>
+                </div>
+                <h1 class="title-main">CORET CERIA</h1>
+                <!-- <p class="title-subtitle">Mengucap - Mengeja - Menyusun</p> -->
+              </div>
+              <!-- Action buttons (hidden until Play clicked) -->
+              <div
+                class="banner-actions"
+                id="bannerActions"
+                style="display: none"
+              >
+                <!-- Back button SVG sudah dipindahkan ke sidebar -->
+
+                <div class="btn-activity-active">
+                  <button
+                    id="btnBelajar"
+                    class="btn-activity btn-activity-belajar"
+                    onclick="navigateToActivity('activities/materi.html')"
+                  >
+                    MATERI
+                    <!-- <span class="icon">📚</span> -->
+                  </button>
+                  <button
+                    id="btnBermain"
+                    class="btn-activity btn-activity-materi"
+                  >
+                    <!-- <span class="icon">📚</span> -->
+                    Bermain
+                    <!-- <span class="icon">📚</span> -->
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flag-left"></div>
+            <div class="flag-right"></div>
+          </div>
+        </div>
+
+        <!-- CHARACTER & PLAY BUTTON -->
+        <div class="center-content">
+          <button class="play-button btn-game-orange" id="playBtn">
+            <span class="btn-game-icon"></span>
+          </button>
+        </div>
+        <!-- BLOCKS AT BOTTOM -->
+        <!-- <div class="bottom-blocks">
+          <div class="block-item blue">a</div>
+          <div class="block-item red">b</div>
+          <div class="block-item orange">c</div>
+          <div class="block-item pink">d</div>
+        </div> -->
+
+        <div class="char-container">
+          <img class="char-image" src="./images/char1.png" />
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="./js/shared.js"></script>
+    <script src="./js/persistent-music.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

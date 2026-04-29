@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coret-Coret - Coret Ceria</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR NAVIGASI BARU - VERTIKAL -->
+    <div class="sidebar-nav" id="sidebarNav">
+      <!-- Hamburger toggle button (hidden on desktop, shown on mobile) -->
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+
+      <!-- Navigation menu container -->
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
+        <button
+          class="btn-nav btn-music music-playing"
+          id="musicToggle"
+          data-music-toggle
+          title="Musik Hidup (Klik untuk Matikan)"
+        >
+          🎵
+        </button>
+        <button class="btn-nav btn-back" title="Kembali">←</button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- CORET-CORET (DRAWING) ACTIVITY -->
+      <section class="screen active" id="drawingScreen">
+        <div class="activity-header">
+          <h2>✏️ Coret-Coret</h2>
+        </div>
+
+        <div class="activity-content">
+          <div class="canvas-container">
+            <canvas id="drawingCanvas"></canvas>
+          </div>
+
+          <div class="canvas-controls">
+            <button class="btn-clear">🗑️ Hapus</button>
+            <input type="color" id="colorPicker" value="#667eea" />
+            <label for="brushSize">Ukuran Brush:</label>
+            <input type="range" id="brushSize" min="1" max="20" value="5" />
+            <span id="brushSizeDisplay">5px</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="../js/shared.js"></script>
+    <script src="../js/persistent-music.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/drawing.js"></script>
+  </body>
+</html>

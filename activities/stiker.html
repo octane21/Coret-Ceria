@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah Stiker - Coret Ceria</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR NAVIGASI BARU - VERTIKAL -->
+    <div class="sidebar-nav" id="sidebarNav">
+      <!-- Hamburger toggle button (hidden on desktop, shown on mobile) -->
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+
+      <!-- Navigation menu container -->
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
+        <button
+          class="btn-nav btn-music music-playing"
+          id="musicToggle"
+          data-music-toggle
+          title="Musik Hidup (Klik untuk Matikan)"
+        >
+          🎵
+        </button>
+        <button class="btn-nav btn-back" title="Kembali">←</button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- STIKER ACTIVITY -->
+      <section class="screen active" id="stikerScreen">
+        <div class="activity-header">
+          <h2>⭐ Tambah Stiker</h2>
+        </div>
+
+        <div class="activity-content">
+          <div class="stiker-canvas"></div>
+
+          <div class="stiker-palette">
+            <button class="stiker-btn" data-stiker="⭐">⭐</button>
+            <button class="stiker-btn" data-stiker="🎉">🎉</button>
+            <button class="stiker-btn" data-stiker="❤️">❤️</button>
+            <button class="stiker-btn" data-stiker="🌟">🌟</button>
+            <button class="stiker-btn" data-stiker="🎈">🎈</button>
+            <button class="stiker-btn" data-stiker="🎀">🎀</button>
+          </div>
+
+          <button class="btn-clear">🗑️ Hapus Semua</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="../js/shared.js"></script>
+    <script src="../js/persistent-music.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/stiker.js"></script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilih Materi - Coret Ceria</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- SIDEBAR NAVIGASI BARU - VERTIKAL -->
+    <div class="sidebar-nav" id="sidebarNav">
+      <!-- Hamburger toggle button (hidden on desktop, shown on mobile) -->
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+
+      <!-- Navigation menu container -->
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
+        <button
+          class="btn-nav btn-music music-playing"
+          id="musicToggle"
+          data-music-toggle
+          title="Musik Hidup (Klik untuk Matikan)"
+        >
+          🎵
+        </button>
+        <button class="btn-nav btn-back" title="Kembali">←</button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content materi-main">
+      <!-- BACKGROUND DECORATIONS -->
+      <div class="bg-tree left"></div>
+      <div class="bg-tree right"></div>
+      <div class="bg-building"></div>
+
+      <!-- MATERI SELECTION SCREEN -->
+      <section class="screen active" id="materiScreen" class="materi-screen">
+        <!-- TITLE BOARD -->
+        <!-- <div class="materi-title-board"> -->
+        <!-- <h1 class="materi-title">Pilih Materi</h1> -->
+        <!-- TOMBOL KEMBALI DI SUDUT ATAS KIRI PAPAN -->
+        <!-- <button class="btn-back-materi" onclick="goHome()">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter
+                  id="shadow"
+                  x="-20%"
+                  y="-20%"
+                  width="140%"
+                  height="140%"
+                >
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+                  <feOffset dx="0" dy="2" result="offsetblur" />
+                  <feComponentTransfer>
+                    <feFuncA type="linear" slope="0.3" />
+                  </feComponentTransfer>
+                  <feMerge>
+                    <feMergeNode />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <path
+                d="M75 35 L50 35 L50 20 Q50 15 45 18 L15 45 Q10 50 15 55 L45 82 Q50 85 50 80 L50 65 L75 65 Q85 65 85 50 Q85 35 75 35 Z"
+                fill="#333"
+              />
+
+              <path
+                d="M73 38 L48 38 L48 25 L19 50 L48 75 L48 62 L73 62 Q82 62 82 50 Q82 38 73 38 Z"
+                fill="white"
+              />
+
+              <path
+                d="M71 40 L46 40 L46 30 L23 50 L46 70 L46 60 L71 60 Q79 60 79 50 Q79 40 71 40 Z"
+                fill="#FF9800"
+              />
+
+              <path
+                d="M70 42 L46 42 L46 35 L28 50 L46 65 L46 42 Q60 42 70 42"
+                fill="white"
+                fill-opacity="0.4"
+              />
+            </svg>
+          </button>
+        </div> -->
+
+        <!-- MENU CARDS CONTAINER -->
+        <div class="materi-cards-container">
+          <!-- PENGENALAN HURUF CARD -->
+          <div class="materi-card" id="cardHuruf">
+            <p class="cartoon-font">Mengenal Huruf</p>
+            <!-- <div class="card-description">Belajar mengenal huruf A-Z</div> -->
+            <div class="card-icon">
+              <img class="materi-icon" src="../images/letters1.png" alt="" />
+            </div>
+          </div>
+
+          <!-- PENGENALAN BENDA CARD -->
+          <div class="materi-card" id="cardBenda">
+            <p class="cartoon-font">Mengenal Benda</p>
+            <!-- <div class="card-description">Belajar mengenal nama-nama benda</div> -->
+            <div class="card-icon">
+              <img class="materi-icon" src="../images/tas.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <!-- KARAKTER DI SUDUT KANAN BAWAH -->
+        <div class="character-corner">
+          <img src="../images/char1.png" alt="Karakter" class="character-img" />
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="../js/shared.js"></script>
+    <script src="../js/persistent-music.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/materi.js"></script>
+  </body>
+</html>

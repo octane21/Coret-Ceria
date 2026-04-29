@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penyusunan Huruf - Coret Ceria</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR NAVIGASI BARU - VERTIKAL -->
+    <div class="sidebar-nav" id="sidebarNav">
+      <!-- Hamburger toggle button (hidden on desktop, shown on mobile) -->
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+
+      <!-- Navigation menu container -->
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
+        <button
+          class="btn-nav btn-music music-playing"
+          id="musicToggle"
+          data-music-toggle
+          title="Musik Hidup (Klik untuk Matikan)"
+        >
+          🎵
+        </button>
+        <button class="btn-nav btn-back" title="Kembali">←</button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="susun-main">
+      <!-- SUSUN SELECTION SCREEN -->
+      <section id="susunScreen" class="susun-screen">
+        <!-- MAIN BOARD DENGAN GAME -->
+        <div class="susun-main-board">
+          <!-- BENDA ICON -->
+          <div class="susun-icon-large" id="susunIconLarge">🪑</div>
+
+          <!-- BENDA NAME (FULL WORD) -->
+          <!-- <div class="susun-word-display" id="susunWordDisplay">Kursi</div> -->
+
+          <!-- DROP ZONE -->
+          <div class="susun-letters-dropzone" id="lettersDropzone">
+            <!-- Huruf akan ditaruh di sini -->
+          </div>
+
+          <!-- DRAGGABLE LETTERS -->
+          <div class="susun-letters-pool" id="lettersPool">
+            <!-- Akan di-generate oleh JavaScript -->
+          </div>
+
+          <!-- CHECK BUTTON -->
+          <button class="btn-check-susun" id="btnCheckSusun">
+            ✓ Periksa Jawaban
+          </button>
+
+          <!-- TOMBOL KEMBALI SUDAH DIPINDAHKAN KE SIDEBAR -->
+        </div>
+
+        <!-- SUSUN ITEMS GRID DI BAWAH -->
+        <div class="susun-grid-container">
+          <div class="susun-grid">
+            <div class="susun-btn" data-susun="apel">
+              <div class="susun-icon">🍎</div>
+            </div>
+
+            <div class="susun-btn" data-susun="bola">
+              <div class="susun-icon">⚽</div>
+            </div>
+
+            <div class="susun-btn" data-susun="cangkir">
+              <div class="susun-icon">☕</div>
+            </div>
+
+            <div class="susun-btn" data-susun="dompet">
+              <div class="susun-icon">👝</div>
+            </div>
+
+            <div class="susun-btn" data-susun="ekor">
+              <div class="susun-icon">🐿️</div>
+            </div>
+
+            <div class="susun-btn" data-susun="film">
+              <div class="susun-icon">🎬</div>
+            </div>
+
+            <div class="susun-btn" data-susun="gitar">
+              <div class="susun-icon">🎸</div>
+            </div>
+
+            <div class="susun-btn" data-susun="hati">
+              <div class="susun-icon">❤️</div>
+            </div>
+
+            <div class="susun-btn" data-susun="ikan">
+              <div class="susun-icon">🐟</div>
+            </div>
+
+            <div class="susun-btn" data-susun="jam">
+              <div class="susun-icon">⏰</div>
+            </div>
+
+            <div class="susun-btn" data-susun="kunci">
+              <div class="susun-icon">🔑</div>
+            </div>
+
+            <div class="susun-btn" data-susun="lilin">
+              <div class="susun-icon">🕯️</div>
+            </div>
+
+            <div class="susun-btn" data-susun="mobil">
+              <div class="susun-icon">🚗</div>
+            </div>
+
+            <div class="susun-btn" data-susun="nanas">
+              <div class="susun-icon">🍍</div>
+            </div>
+
+            <div class="susun-btn" data-susun="obeng">
+              <div class="susun-icon">🪛</div>
+            </div>
+
+            <div class="susun-btn" data-susun="pisang">
+              <div class="susun-icon">🍌</div>
+            </div>
+
+            <div class="susun-btn" data-susun="kayu">
+              <div class="susun-icon">🪵</div>
+            </div>
+
+            <div class="susun-btn" data-susun="rumah">
+              <div class="susun-icon">🏠</div>
+            </div>
+
+            <div class="susun-btn" data-susun="sepatu">
+              <div class="susun-icon">👞</div>
+            </div>
+
+            <div class="susun-btn" data-susun="topi">
+              <div class="susun-icon">🎩</div>
+            </div>
+
+            <div class="susun-btn" data-susun="udang">
+              <div class="susun-icon">🦐</div>
+            </div>
+
+            <div class="susun-btn" data-susun="voli">
+              <div class="susun-icon">🏐</div>
+            </div>
+
+            <div class="susun-btn" data-susun="wajan">
+              <div class="susun-icon">🍳</div>
+            </div>
+
+            <div class="susun-btn" data-susun="xerox">
+              <div class="susun-icon">📋</div>
+            </div>
+
+            <div class="susun-btn" data-susun="yogurt">
+              <div class="susun-icon">🥛</div>
+            </div>
+
+            <div class="susun-btn" data-susun="zebra">
+              <div class="susun-icon">🦓</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KARAKTER DI SUDUT KANAN BAWAH -->
+        <!-- <div class="character-corner">
+          <img src="../images/char1.png" alt="Karakter" class="character-img" />
+        </div> -->
+
+        <!-- MODAL HASIL JAWABAN -->
+        <div class="susun-result-modal" id="susunResultModal">
+          <div class="modal-overlay"></div>
+          <div class="modal-content">
+            <div class="header-banner">
+              <div class="banner-hanging">
+                <div class="hanging-rod left"></div>
+                <div class="hanging-rod right"></div>
+                <div class="banner-box">
+                  <div class="result-icon" id="resultIcon">✓</div>
+                  <div class="result-message" id="resultMessage">
+                    Jawaban Benar!
+                  </div>
+                  <div class="result-details" id="resultDetails"></div>
+                  <button
+                    class="btn-result-next"
+                    id="btnResultNext"
+                    onclick="closeResultModal()"
+                  >
+                    Lanjut →
+                  </button>
+                </div>
+                <div class="flag-left"></div>
+                <div class="flag-right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="../js/shared.js"></script>
+    <script src="../js/persistent-music.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/susun.js"></script>
+  </body>
+</html>

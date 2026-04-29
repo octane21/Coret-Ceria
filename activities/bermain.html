@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilih Permainan - Coret Ceria</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- SIDEBAR NAVIGASI BARU - VERTIKAL -->
+    <div class="sidebar-nav" id="sidebarNav">
+      <!-- Hamburger toggle button (hidden on desktop, shown on mobile) -->
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+
+      <!-- Navigation menu container -->
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
+        <button
+          class="btn-nav btn-music music-playing"
+          id="musicToggle"
+          data-music-toggle
+          title="Musik Hidup (Klik untuk Matikan)"
+        >
+          🎵
+        </button>
+        <button class="btn-nav btn-back" title="Kembali">←</button>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content bermain-main">
+      <!-- BERMAIN SELECTION SCREEN -->
+      <section id="bermainScreen" class="bermain-screen">
+        <!-- MENU CARDS CONTAINER -->
+        <div class="bermain-cards-container">
+          <!-- PENGENALAN HURUF CARD -->
+          <div class="bermain-card" id="cardMewarnai">
+            <p class="cartoon-font">Menggambar Benda</p>
+            <div class="card-icon">
+              <img
+                class="bermain-icon"
+                src="../images/mewarnaibenda.png"
+                alt="Mewarnai Benda"
+              />
+            </div>
+          </div>
+
+          <!-- PENGENALAN BENDA CARD -->
+          <div class="bermain-card" id="cardSusun">
+            <p class="cartoon-font">Menyusun Huruf</p>
+            <div class="card-icon">
+              <img
+                class="bermain-icon"
+                src="../images/menyusunhuruf.png"
+                alt="Menyusun Huruf"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- KARAKTER DI SUDUT KANAN BAWAH -->
+        <div class="character-corner">
+          <img src="../images/char1.png" alt="Karakter" class="character-img" />
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="../js/shared.js"></script>
+    <script src="../js/persistent-music.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/bermain.js"></script>
+  </body>
+</html>

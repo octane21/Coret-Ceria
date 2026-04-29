@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Menggambar Benda - Coret Ceria</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/drawing-benda.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- SIDEBAR NAVIGASI BARU - VERTIKAL -->
+    <div class="sidebar-nav" id="sidebarNav">
+      <!-- Hamburger toggle button (hidden on desktop, shown on mobile) -->
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+
+      <!-- Navigation menu container -->
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
+        <button
+          class="btn-nav btn-music music-playing"
+          id="musicToggle"
+          data-music-toggle
+          title="Musik Hidup (Klik untuk Matikan)"
+        >
+          🎵
+        </button>
+        <button class="btn-nav btn-back" title="Kembali">←</button>
+      </div>
+    </div>
+
+    <main class="main-content drawing-benda-main">
+      <!-- ======================================== -->
+      <!-- SELECTION SCREEN -->
+      <!-- ======================================== -->
+
+      <section class="screen active" id="drawingBendaSelectionScreen">
+        <div class="drawing-title-board">
+          <h1 class="drawing-title cartoon-font">Pilih Benda untuk Digambar</h1>
+        </div>
+
+        <!-- GRID -->
+        <div class="drawing-benda-grid">
+          <!-- <div class="book-binding"></div> -->
+
+          <div class="drawing-benda-item" data-benda="kursi">
+            <div class="drawing-benda-icon">
+              <img src="../images/kursi.png" alt="Kursi" />
+            </div>
+            <div class="drawing-benda-name">Kursi</div>
+          </div>
+
+          <div class="drawing-benda-item" data-benda="meja">
+            <div class="drawing-benda-icon">
+              <img src="../images/meja.png" alt="Meja" />
+            </div>
+            <div class="drawing-benda-name">Meja</div>
+          </div>
+
+          <div class="drawing-benda-item" data-benda="pintu">
+            <div class="drawing-benda-icon">
+              <img src="../images/pintu.png" alt="Pintu" />
+            </div>
+            <div class="drawing-benda-name">Pintu</div>
+          </div>
+
+          <div class="drawing-benda-item" data-benda="jendela">
+            <div class="drawing-benda-icon">
+              <img src="../images/jendela.png" alt="Jendela" />
+            </div>
+            <div class="drawing-benda-name">Jendela</div>
+          </div>
+
+          <div class="drawing-benda-item" data-benda="buku">
+            <div class="drawing-benda-icon">
+              <img src="../images/buku.png" alt="Buku" />
+            </div>
+            <div class="drawing-benda-name">Buku</div>
+          </div>
+
+          <div class="drawing-benda-item" data-benda="pensil">
+            <div class="drawing-benda-icon">
+              <img src="../images/pensil.png" alt="Pensil" />
+            </div>
+            <div class="drawing-benda-name">Pensil</div>
+          </div>
+
+          <div class="drawing-benda-item" data-benda="bunga">
+            <div class="drawing-benda-icon">
+              <img src="../images/bunga.png" alt="Bunga" />
+            </div>
+            <div class="drawing-benda-name">Bunga</div>
+          </div>
+
+          <div class="drawing-benda-item" data-benda="bola">
+            <div class="drawing-benda-icon">
+              <img src="../images/bola.png" alt="Bola" />
+            </div>
+            <div class="drawing-benda-name">Bola</div>
+          </div>
+        </div>
+
+        <!-- <div class="character-corner">
+          <img src="../images/char1.png" class="character-img" />
+        </div> -->
+      </section>
+
+      <!-- ======================================== -->
+      <!-- DRAWING SCREEN -->
+      <!-- ======================================== -->
+
+      <section class="screen" id="drawingBendaGameScreen">
+        <div class="drawing-toolbar">
+          <h2 class="drawing-game-title" id="drawingTitle">Menggambar Kursi</h2>
+        </div>
+
+        <div class="drawing-container">
+          <!-- REFERENSI -->
+          <div class="drawing-reference-section">
+            <label class="section-label">Referensi</label>
+
+            <div class="drawing-reference-box" id="referenceBox"></div>
+          </div>
+
+          <!-- CANVAS -->
+          <div class="drawing-canvas-section">
+            <label class="section-label">Kanvas</label>
+
+            <canvas id="drawingCanvas" class="drawing-canvas"></canvas>
+          </div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="drawing-controls-section">
+          <div class="controls-group">
+            <label class="control-label">Warna</label>
+
+            <input
+              type="color"
+              id="penColor"
+              value="#333333"
+              class="color-input"
+            />
+          </div>
+
+          <div class="controls-group">
+            <label class="control-label">Ukuran</label>
+
+            <input
+              type="range"
+              id="brushSize"
+              min="1"
+              max="20"
+              value="3"
+              class="brush-slider"
+            />
+
+            <span id="brushSizeLabel">3px</span>
+          </div>
+
+          <div class="controls-group action-buttons-drawing">
+            <button
+              class="btn-action-drawing btn-clear"
+              onclick="clearCanvas()"
+            >
+              🗑️ Hapus
+            </button>
+
+            <button class="btn-action-drawing btn-undo" onclick="undoDrawing()">
+              ↶ Undo
+            </button>
+
+            <button
+              class="btn-action-drawing btn-finish"
+              onclick="finishDrawing()"
+            >
+              ✓ Selesai
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPLETION MODAL -->
+      <div class="drawing-completion-modal" id="drawingCompletionModal">
+        <div class="modal-overlay-drawing"></div>
+        <div class="modal-content-drawing">
+          <!-- Header -->
+          <div class="modal-header-drawing">
+            <h2 class="modal-title-drawing">Selesai!</h2>
+          </div>
+
+          <!-- Body -->
+          <div class="modal-body-drawing">
+            <!-- Benda Name Only -->
+            <div class="benda-display-drawing">
+              <div class="benda-name-drawing" id="modalBendaName">Kursi</div>
+            </div>
+
+            <!-- Drawing Preview -->
+            <div class="drawing-preview-section">
+              <label class="preview-label">Hasil Gambarmu</label>
+              <div class="result-preview" id="resultPreview"></div>
+            </div>
+
+            <!-- Ejaan Section -->
+            <div class="ejaan-section-drawing">
+              <label class="ejaan-label">Ejaan</label>
+              <div class="ejaan-display-drawing" id="modalEjaanDisplay">
+                K-U-R-S-I
+              </div>
+            </div>
+
+            <!-- Completion Message -->
+            <div class="completion-text-drawing" id="drawingCompletionText">
+              Kamu berhasil menggambar Kursi dengan luar biasa!
+            </div>
+
+            <!-- Audio Button -->
+            <button class="btn-audio-drawing" onclick="playBendaAudio()">
+              🔊 Dengarkan Ejaan
+            </button>
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer-drawing">
+            <button class="btn-action-modal btn-retry" onclick="retryDrawing()">
+              ↶ Coba Lagi
+            </button>
+
+            <button class="btn-action-modal btn-next" onclick="nextDrawing()">
+              → Selanjutnya
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/shared.js"></script>
+    <script src="../js/persistent-music.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/drawing-benda.js"></script>
+  </body>
+</html>
