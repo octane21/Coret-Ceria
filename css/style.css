@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  font-family: "Comic Sans MS", "Arial Rounded MT Bold", cursive, sans-serif;
+  font-family: "Fredoka", sans-serif;
   background-image: url("../images/background.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -168,6 +168,7 @@ body {
 .main-content {
   width: 100%;
   height: 100%;
+  /* padding: 100px; */
   overflow-y: auto;
   position: relative;
 }
@@ -181,6 +182,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  /* pad */
 }
 
 .screen.active {
@@ -796,17 +798,22 @@ body {
   justify-content: center;
   padding: 20px;
   overflow: auto;
+  /* padding: 100px; */
   gap: 30px;
+  /* padding-bottom: ; */
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .materi-screen {
   position: relative;
   width: 100%;
+  /* padding: 200px; */
+  /* background-color: #00f2fe; */
+  /* margin-bottom: 100px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -858,7 +865,8 @@ body {
   gap: 50px;
   justify-content: center;
   align-items: end;
-  margin: 0 auto;
+  margin: 50px auto;
+  /* padding: 30px; */
   /* flex-wrap: wrap;
   width: 90%; */
   /* background-color: #2f9e44; */
@@ -1004,8 +1012,13 @@ body {
   align-items: center;
   justify-content: flex-start;
   gap: 30px;
-}
+  /* font-family: "Fredoka", sans-serif; */
 
+  /* font-family: ; */
+}
+.susun-main{
+  padding: 0;
+}
 .benda-spelling-screen {
   /* position: relative; */
   width: 100%;
@@ -1018,6 +1031,7 @@ body {
 
 /* BENDA MAIN BOARD - LIKE HURUF KECIL */
 .benda-main-board {
+  font-family: "Fredoka", sans-serif;
   position: relative;
   width: 100%;
   max-width: 750px;
@@ -1025,7 +1039,7 @@ body {
   background: linear-gradient(135deg, #f5deb3 0%, #daa520 100%);
   border: 12px solid #8b7355;
   border-radius: 30px;
-  padding: 5px;
+  /* padding: 5px; */
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.3),
     inset 0 2px 5px rgba(255, 255, 255, 0.2),
@@ -1033,12 +1047,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   flex-shrink: 0;
 }
 
 .benda-icon-large {
-  font-size: 120px;
+  font-size: 100px;
   animation: pulse 1.5s ease-in-out infinite;
   text-shadow:
     3px 3px 0px rgba(0, 0, 0, 0.25),
@@ -1050,6 +1064,8 @@ body {
 
 .benda-word-display {
   font-size: 42px;
+  font-family: "Fredoka", sans-serif;
+
   font-weight: bold;
   color: #333;
   margin: 0;
@@ -1091,15 +1107,18 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: 3px solid white;
-  padding: 15px 35px;
+  padding: 15px;
   border-radius: 25px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+    font-family: "Fredoka", sans-serif;
+
+  margin-bottom: 10px;
 }
 
 .btn-listen-benda:hover {
@@ -1511,7 +1530,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  /* margin-bottom: 200px; */
   overflow: auto;
   gap: 30px;
 }
@@ -1521,6 +1540,8 @@ body {
   position: relative;
   width: 100%;
   display: flex;
+  font-family: "Fredoka", sans-serif;
+
   /* height: 100%; */
   /* background-color: #2f9e44; */
   flex-direction: column;
@@ -1703,17 +1724,21 @@ body {
 .letters-grid-container {
   margin: 20px auto 0px auto;
   background: white;
+  font-family: "Fredoka", sans-serif;
+
   border: 8px solid #daa520;
   border-radius: 25px;
   height: fit-content;
-  padding: 10px 30px;
-  width: 50%;
-  max-width: 700px;
+  padding: 10px 20px 0px 20px;
+  /* padding-bottom: 10px; */
+  /* width: 50%; */
+  /* max-width: 700px; */
+  min-width: 700px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
   display: block;
   position: relative;
-  bottom: -50%;
+  bottom: -45%;
   /* flex-direction: row;
   align-items: center;  */
 }
@@ -1737,12 +1762,16 @@ body {
   font-weight: bold;
   color: black;
   cursor: pointer;
+  /* font-family: "Fredoka", sans-serif; */
+  font-family: "Fredoka", sans-serif;
+
+
   transition: all 0.1s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  font-family: "Arial Black", sans-serif;
+  /* font-family: "Arial Black", sans-serif; */
 
   /* Efek 3D dengan box-shadow */
   box-shadow:
@@ -1869,6 +1898,7 @@ body {
   align-items: flex-end;
   justify-content: center;
   z-index: 5;
+  margin-bottom: 50px;
 }
 
 .character-img {
@@ -2072,7 +2102,8 @@ body {
 .btn-activity-belajar,
 .btn-activity-materi {
   /* Font & Warna Dasar */
-  font-family: "Arial Black", sans-serif;
+  font-family: "Archivo Black", sans-serif;
+  /* font-family: "Fredoka", sans-serif; */
   /* font-size: 24px; */
   color: black; /* Warna teks kuning emas */
   background-color: #d81b60; /* Warna pink fanta utama */
@@ -2098,7 +2129,7 @@ body {
 
   transition: all 0.1s ease;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   outline: none;
 }
 
@@ -2535,11 +2566,19 @@ body {
     padding: 30px 40px;
     width: 400px;
   }
+  .letters-grid-container {
+ 
+  min-width: 500px;
+bottom:-43%;
+padding: 10px 10px 0 10px;
+}
+
 
   .header-banner.centered {
     top: 25%;
   }
 
+  
   .char-container {
     right: 5%;
   }
@@ -2610,6 +2649,10 @@ body {
 
 /* Media Query untuk dibawah 760px */
 @media (max-width: 760px) {
+  .materi-main {
+  background-image: url(../images/backgroun2-480.png);
+}
+
   /* Letters Banner Adjustments */
   .letters-main .banner-box {
     width: 320px;
@@ -2652,24 +2695,6 @@ body {
     height: 35px;
   }
 
-  /* Grid Container untuk 760px */
-  .letters-grid-container {
-    width: 85%;
-    max-width: 500px;
-    padding: 20px;
-    margin: 15px auto 30px auto;
-  }
-
-  .letters-grid-container .huruf-grid {
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    gap: 10px;
-  }
-
-  .letters-grid-container .huruf-btn {
-    width: 55px;
-    height: 55px;
-    font-size: 24px;
-  }
 
   .letters-switch-container {
     margin-bottom: 15px;
@@ -2687,6 +2712,7 @@ body {
 
 /* Media Query 760px untuk BENDA */
 @media (max-width: 760px) {
+  
   /* Benda Display Board Adjustments */
   .benda-display-board {
     width: 320px;
@@ -2694,6 +2720,26 @@ body {
     min-height: 220px;
   }
 
+  .banner-box {
+    width: 300px;
+    align-items: center;
+    justify-self: center;
+    display: flex;
+    padding: 20px 30px;
+    min-height: 250px;
+  }
+
+  .btn-activity-belajar,
+.btn-activity-materi{
+  font-size: 15px;
+  /* padding: 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /* align-items: center; */
+  text-align: center;
+}
   .benda-display-board .benda-besar {
     font-size: 65px;
     animation:
@@ -2749,13 +2795,81 @@ body {
 }
 
 @media (max-width: 480px) {
+
+  .bermain-main {
+  background-image: url("../images/backgroun3-480.png");
+}
+
   .banner-box {
     width: 300px;
-    padding: 20px 30px;
+     align-items: center;
+    justify-self: center;
+    display: flex; 
+    padding: 0 20px;
+    min-height: 200px;
+    /* text-align: center; 
   }
 
   .title-main {
     font-size: 28px;
+  }
+  .btn-activity-belajar,
+.btn-activity-materi{
+  font-size: 15px;
+  /* padding: 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /* align-items: center; */
+  text-align: center;
+}
+
+/* .letters-screen .banner-box{
+  padding: 0;
+} */
+ .letters-grid-container {
+  min-width: 100px;
+bottom:-43%;
+padding: 10px 10px 0 10px;
+/* font-size: 10px; */
+}
+
+.letters-grid-container .huruf-btn {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+/* .materi-card { */
+  /* background: white; */
+  /* border: 8px solid #ffd700; */
+  /* border-radius: 25px; */
+  /* padding: 40px 30px; */
+  /* width: 100px; */
+  /* height: 320px; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease; */
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); */
+  /* position: relative; */
+  /* background-color: #333; */
+  /* overflow: hidden; */
+/* } */
+.materi-main {
+  background-image: url(../images/backgroun2-480.png);
+}
+
+.char-container {
+    right: 1%;
+    /* width: 100px; */
+  }
+
+  .char-image {
+    width: 150px;
   }
 
   .logo-blocks {
@@ -2763,7 +2877,7 @@ body {
   }
 
   .block-letter {
-    width: 40px;
+    width: 20px;
     height: 40px;
     font-size: 18px;
   }
@@ -2793,8 +2907,8 @@ body {
   }
 
   .huruf-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto, 1fr);
+    gap: 0px;
   }
 
   .huruf-besar {
@@ -2803,17 +2917,21 @@ body {
 
   /* Letters Banner Mobile Responsive */
   .letters-main .banner-box {
-    width: 280px;
-    padding: 20px;
-    min-height: 220px;
+    /* width: 200px; */
+    /* padding: 1px;  */
+    height: 100px;
   }
 
   .letters-main .huruf-besar {
-    font-size: 60px;
+    font-size: 10px;
   }
+  /* .letters-main .huruf-btn {
+  width: 30px;
+  height: 40px;
+} */
 
   .letters-main .huruf-nama {
-    font-size: 16px;
+    font-size: 10px;
   }
 
   .letters-main .btn-suara {
@@ -3368,10 +3486,12 @@ body {
   border: 4px solid white;
   border-radius: 15px;
   padding: 0;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
+    font-family: "Fredoka", sans-serif;
+
   box-shadow:
     0 8px 15px rgba(0, 0, 0, 0.2),
     inset 0 1px 0px rgba(255, 255, 255, 0.3);
@@ -3418,9 +3538,9 @@ body {
   /* Letters Page Responsive */
   .letters-main .banner-box {
     width: 90%;
-    max-width: 500px;
+    min-width: 300px;
     padding: 30px;
-    min-height: 260px;
+    /* min-height: 260px; */
   }
 
   .letters-main .huruf-besar {
@@ -3450,18 +3570,19 @@ body {
   .letters-grid-container {
     width: 95%;
     max-width: 600px;
-    padding: 20px;
+    padding: 10px 10px 0 10px;
+    bottom: -35%;
   }
 
   .letters-grid-container .huruf-grid {
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    gap: 10px;
+    gap: 5px;
   }
 
   .letters-grid-container .huruf-btn {
     width: 50px;
     height: 50px;
-    font-size: 20px;
+    font-size: 35px;
     box-shadow:
       0 6px 0px #d84315,
       0 8px 10px rgba(0, 0, 0, 0.3);
@@ -3491,13 +3612,16 @@ body {
 
   /* Materi Page Responsive */
   .materi-cards-container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
+    /* align-items: ; */
+    height: 100%;
+    padding: 10px;
+    overflow: hidden;
   }
 
   .materi-card {
-    width: 100%;
-    height: 280px;
+    width: 100%; 
   }
 
   .card-icon {
@@ -4500,16 +4624,22 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 15px 0 20px 0;
+  margin: 15px 0 15px 0;
   min-height: 60px;
 }
 
 .susun-letter {
   background: linear-gradient(135deg, #ff9800 0%, #ffa500 100%);
   color: white;
-  padding: 15px 25px;
+  /* padding: 15px 25px; */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   border-radius: 15px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   border: 3px solid white;
   box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
@@ -4536,12 +4666,12 @@ body {
   border: 3px dashed #667eea;
   border-radius: 15px;
   padding: 15px 25px;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #667eea;
   cursor: pointer;
@@ -4575,7 +4705,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 20px 0;
+  margin: 15px 0;
   min-height: 70px;
   background: rgba(255, 255, 255, 0.3);
   border: 3px dashed #8b7355;
@@ -4594,9 +4724,9 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: 3px solid white;
-  padding: 15px 35px;
+  padding: 8px 15px;
   border-radius: 25px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
