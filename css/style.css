@@ -865,7 +865,7 @@ body {
   gap: 50px;
   justify-content: center;
   align-items: end;
-  margin: 0px auto;
+  margin: 50px auto;
   /* padding: 30px; */
   /* flex-wrap: wrap;
   width: 90%; */
@@ -2800,6 +2800,15 @@ padding: 10px 10px 0 10px;
   background-image: url("../images/backgroun3-480.png");
 }
 
+.materi-cards-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items:end;
+  margin: 0px auto;
+}
+
+
   .banner-box {
     width: 300px;
      align-items: center;
@@ -3617,6 +3626,7 @@ padding: 10px 10px 0 10px;
     /* align-items: ; */
     height: 100%;
     padding: 10px;
+    padding-bottom: 50px;
     overflow: hidden;
   }
 
