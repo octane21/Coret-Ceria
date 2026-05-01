@@ -1127,20 +1127,20 @@
   }
 
   .drawing-title-board{
-    margin-top: 80px;
+    margin-top: 100px;
   }
-  /* .drawing-benda-icon img{
-    width: 60px;
-} */
+  .drawing-benda-icon img{
+    width: 50px;
+}
   .btn-back-drawing {
     width: 60px;
     height: 60px;
   }
 
   .drawing-benda-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    /* pad */
+       grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 10px;
+    /* padding: 10px; */
   }
 
   .drawing-benda-item {
