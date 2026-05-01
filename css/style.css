@@ -1096,6 +1096,10 @@ body {
   align-items: center;
   gap: 8px;
 }
+.benda-syllable.first {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    text-transform:uppercase ;
+}
 
 .syllable-separator {
   font-size: 20px;

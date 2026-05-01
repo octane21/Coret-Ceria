@@ -14,11 +14,11 @@ const susunData = {
     word: "bola",
     letters: ["b", "o", "l", "a"],
   },
-  cangkir: {
-    name: "Cangkir",
-    icon: "☕",
-    word: "cangkir",
-    letters: ["c", "a", "n", "g", "k", "i", "r"],
+  celana: {
+    name: "Celana",
+    icon: "👖",
+    word: "celana",
+    letters: ["c", "e", "l", "a", "n", "a"],
   },
   dompet: {
     name: "Dompet",
@@ -26,33 +26,33 @@ const susunData = {
     word: "dompet",
     letters: ["d", "o", "m", "p", "e", "t"],
   },
-  ekor: {
-    name: "Ekor",
-    icon: "🐿️",
-    word: "ekor",
-    letters: ["e", "k", "o", "r"],
+  ember: {
+    name: "Ember",
+    icon: "🪣",
+    word: "ember",
+    letters: ["e", "m", "b", "e","r"],
   },
-  film: {
-    name: "Film",
-    icon: "🎬",
-    word: "film",
-    letters: ["f", "i", "l", "m"],
+  foto: {
+    name: "Foto",
+    icon: "🖼️",
+    word: "foto",
+    letters: ["f", "o", "t", "o"],
   },
-  gitar: {
-    name: "Gitar",
-    icon: "🎸",
-    word: "gitar",
-    letters: ["g", "i", "t", "a", "r"],
+  gunting: {
+    name: "Gunting",
+    icon: "✂️",
+    word: "gunting",
+    letters: ["g", "u", "n", "t", "i","n","g"],
   },
-  hati: {
-    name: "Hati",
-    icon: "❤️",
-    word: "hati",
-    letters: ["h", "a", "t", "i"],
+  handuk: {
+    name: "Handuk",
+    icon: "🧣",
+    word: "handuk",
+    letters: ["h", "a", "n", "d","u","k"],
   },
   ikan: {
     name: "Ikan",
-    icon: "🐠",
+    icon: "🐟",
     word: "ikan",
     letters: ["i", "k", "a", "n"],
   },
@@ -68,11 +68,11 @@ const susunData = {
     word: "kunci",
     letters: ["k", "u", "n", "c", "i"],
   },
-  lilin: {
-    name: "Lilin",
-    icon: "�️",
-    word: "lilin",
-    letters: ["l", "i", "l", "i", "n"],
+  lampu: {
+    name: "Lampu",
+    icon: "💡",
+    word: "lampu",
+    letters: ["l", "a", "m", "p", "u"],
   },
   mobil: {
     name: "Mobil",
@@ -86,11 +86,11 @@ const susunData = {
     word: "nanas",
     letters: ["n", "a", "n", "a", "s"],
   },
-  obeng: {
-    name: "Obeng",
-    icon: "�",
-    word: "obeng",
-    letters: ["o", "b", "e", "n", "g"],
+  obat: {
+    name: "Obat",
+    icon: "💊",
+    word: "obat",
+    letters: ["o", "b", "a", "t"],
   },
   pisang: {
     name: "Pisang",
@@ -98,11 +98,11 @@ const susunData = {
     word: "pisang",
     letters: ["p", "i", "s", "a", "n", "g"],
   },
-  kayu: {
-    name: "Kayu",
-    icon: "🪵",
-    word: "kayu",
-    letters: ["k", "a", "y", "u"],
+  quiz: {
+    name: "Quiz",
+    icon: "📝",
+    word: "quiz",
+    letters: ["q", "u", "i", "z"],
   },
   rumah: {
     name: "Rumah",
@@ -128,11 +128,11 @@ const susunData = {
     word: "udang",
     letters: ["u", "d", "a", "n", "g"],
   },
-  voli: {
-    name: "Voli",
-    icon: "🏐",
-    word: "voli",
-    letters: ["v", "o", "l", "i"],
+  vas_bunga: {
+    name: "Vas bunga",
+    icon: "🪴",
+    word: "vas bunga",
+    letters: ["v", "a", "s"," ", "b","u","n","g","a"],
   },
   wajan: {
     name: "Wajan",
@@ -140,17 +140,17 @@ const susunData = {
     word: "wajan",
     letters: ["w", "a", "j", "a", "n"],
   },
-  xerox: {
-    name: "Xerox",
-    icon: "📋",
-    word: "xerox",
-    letters: ["x", "e", "r", "o", "x"],
+  xray: {
+    name: "X-ray",
+    icon: "🩻",
+    word: "x-ray",
+    letters: ["x", "-", "r", "a", "y"],
   },
-  yogurt: {
-    name: "Yogurt",
+  yoyo: {
+    name: "Yoyo",
     icon: "🥛",
-    word: "yogurt",
-    letters: ["y", "o", "g", "u", "r", "t"],
+    word: "yoyo",
+    letters: ["y", "o", "y","o"],
   },
   zebra: {
     name: "Zebra",
