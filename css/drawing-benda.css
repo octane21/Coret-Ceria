@@ -207,6 +207,80 @@
   --rotate-angle: 1.5deg;
 }
 
+.drawing-benda-item:nth-child(9) {
+  animation-delay: 0.1s;
+  --rotate-angle: -3deg;
+}
+.drawing-benda-item:nth-child(10) {
+  animation-delay: 0.15s;
+  --rotate-angle: 2deg;
+}
+.drawing-benda-item:nth-child(11) {
+  animation-delay: 0.2s;
+  --rotate-angle: -2deg;
+}
+.drawing-benda-item:nth-child(12) {
+  animation-delay: 0.25s;
+  --rotate-angle: 3deg;
+}
+.drawing-benda-item:nth-child(13) {
+  animation-delay: 0.3s;
+  --rotate-angle: -1deg;
+}
+.drawing-benda-item:nth-child(14) {
+  animation-delay: 0.35s;
+  --rotate-angle: 2.5deg;
+}
+.drawing-benda-item:nth-child(15) {
+  animation-delay: 0.4s;
+  --rotate-angle: -3.5deg;
+}
+.drawing-benda-item:nth-child(16) {
+  animation-delay: 0.45s;
+  --rotate-angle: 1.5deg;
+}
+
+.drawing-benda-item:nth-child(17) {
+  animation-delay: 0.1s;
+  --rotate-angle: -3deg;
+}
+.drawing-benda-item:nth-child(18) {
+  animation-delay: 0.15s;
+  --rotate-angle: 2deg;
+}
+.drawing-benda-item:nth-child(19) {
+  animation-delay: 0.2s;
+  --rotate-angle: -2deg;
+}
+.drawing-benda-item:nth-child(20) {
+  animation-delay: 0.25s;
+  --rotate-angle: 3deg;
+}
+.drawing-benda-item:nth-child(21) {
+  animation-delay: 0.3s;
+  --rotate-angle: -1deg;
+}
+.drawing-benda-item:nth-child(22) {
+  animation-delay: 0.35s;
+  --rotate-angle: 2.5deg;
+}
+.drawing-benda-item:nth-child(23) {
+  animation-delay: 0.4s;
+  --rotate-angle: -3.5deg;
+}
+.drawing-benda-item:nth-child(24) {
+  animation-delay: 0.45s;
+  --rotate-angle: 1.5deg;
+}
+
+.drawing-benda-item:nth-child(25) {
+  animation-delay: 0.1s;
+  --rotate-angle: -3deg;
+}
+.drawing-benda-item:nth-child(26) {
+  animation-delay: 0.15s;
+  --rotate-angle: 2deg;
+}
 .drawing-benda-item:hover {
   transform: translateY(-15px) scale(1.08) rotate(0deg);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -227,7 +301,7 @@
 }
 
 .drawing-benda-icon img{
-    width: 50px;
+    width: 100px;
 }
 .drawing-benda-item:hover .drawing-benda-icon {
   font-size: 60px;
@@ -979,6 +1053,9 @@
 }
 
 @media (max-width: 768px) {
+  .drawing-benda-icon img{
+    width: 80px;
+}
   .drawing-title {
     margin-top: 100px;
   }
@@ -1048,6 +1125,9 @@
     font-size: 20px;
   }
 
+  .drawing-benda-icon img{
+    width: 60px;
+}
   .btn-back-drawing {
     width: 60px;
     height: 60px;
@@ -1932,6 +2012,9 @@
   .drawing-title {
     font-size: 18px;
   }
+  .drawing-benda-icon img{
+    width: 50px;
+}
 
   .btn-back-drawing {
     width: 45px;

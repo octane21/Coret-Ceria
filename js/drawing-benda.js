@@ -3,53 +3,187 @@
 // ========================================
 
 const bendaData = {
-  kursi: {
-    name: "Kursi",
-    icon: "../images/kursi.png",
-    referenceImage: "../images/kursi.png",
-    ejaan: "K-U-R-S-I",
-  },
-  meja: {
-    name: "Meja",
-    icon: "../images/meja.png",
-    referenceImage: "../images/meja.png",
-    ejaan: "M-E-J-A",
-  },
-  pintu: {
-    name: "Pintu",
-    icon: "../images/pintu.png",
-    referenceImage: "../images/pintu.png",
-    ejaan: "P-I-N-T-U",
-  },
-  jendela: {
-    name: "Jendela",
-    icon: "../images/jendela.png",
-    referenceImage: "../images/jendela.png",
-    ejaan: "J-E-N-D-E-L-A",
-  },
-  buku: {
-    name: "Buku",
-    icon: "../images/buku.png",
-    referenceImage: "../images/buku.png",
-    ejaan: "B-U-K-U",
-  },
-  pensil: {
-    name: "Pensil",
-    icon: "../images/pensil.png",
-    referenceImage: "../images/pensil.png",
-    ejaan: "P-E-N-S-I-L",
-  },
-  bunga: {
-    name: "Bunga",
-    icon: "../images/bunga.png",
-    referenceImage: "../images/bunga.png",
-    ejaan: "B-U-N-G-A",
+  apel: {
+    name: "Apel",
+    icon: "../images/apel.png",
+    referenceImage: "../images/apel.png",
+    ejaan: "A-P-E-L",
+    audioFile: "apel.mp3",
   },
   bola: {
     name: "Bola",
     icon: "../images/bola.png",
     referenceImage: "../images/bola.png",
     ejaan: "B-O-L-A",
+    audioFile: "bola.mp3",
+  },
+  celana: {
+    name: "Celana",
+    icon: "../images/celana.png",
+    referenceImage: "../images/celana.png",
+    ejaan: "C-E-L-A-N-A",
+    audioFile: "celana.mp3",
+  },
+  dompet: {
+    name: "Dompet",
+    icon: "../images/dompet.png",
+    referenceImage: "../images/dompet.png",
+    ejaan: "D-O-M-P-E-T",
+    audioFile: "dompet.mp3",
+  },
+  ember: {
+    name: "Ember",
+    icon: "../images/ember.png",
+    referenceImage: "../images/ember.png",
+    ejaan: "E-M-B-E-R",
+    audioFile: "ember.mp3",
+  },
+  foto: {
+    name: "Foto",
+    icon: "../images/foto.png",
+    referenceImage: "../images/foto.png",
+    ejaan: "F-O-T-O",
+    audioFile: "foto.mp3",
+  },
+  gunting: {
+    name: "Gunting",
+    icon: "../images/gunting.png",
+    referenceImage: "../images/gunting.png",
+    ejaan: "G-U-N-T-I-N-G",
+    audioFile: "gunting.mp3",
+  },
+  handuk: {
+    name: "Handuk",
+    icon: "../images/handuk.png",
+    referenceImage: "../images/handuk.png",
+    ejaan: "H-A-N-D-U-K",
+    audioFile: "handuk.mp3",
+  },
+  ikan: {
+    name: "Ikan",
+    icon: "../images/ikan.png",
+    referenceImage: "../images/ikan.png",
+    ejaan: "I-K-A-N",
+    audioFile: "ikan.mp3",
+  },
+  jam: {
+    name: "Jam",
+    icon: "../images/jam.png",
+    referenceImage: "../images/jam.png",
+    ejaan: "J-A-M",
+    audioFile: "jam.mp3",
+  },
+  kunci: {
+    name: "Kunci",
+    icon: "../images/kunci.png",
+    referenceImage: "../images/kunci.png",
+    ejaan: "K-U-N-C-I",
+    audioFile: "kunci.mp3",
+  },
+  lampu: {
+    name: "Lampu",
+    icon: "../images/lampu.png",
+    referenceImage: "../images/lampu.png",
+    ejaan: "L-A-M-P-U",
+    audioFile: "lampu.mp3",
+  },
+  mobil: {
+    name: "Mobil",
+    icon: "../images/mobil.png",
+    referenceImage: "../images/mobil.png",
+    ejaan: "M-O-B-I-L",
+    audioFile: "mobil.mp3",
+  },
+  nanas: {
+    name: "Nanas",
+    icon: "../images/nanas.png",
+    referenceImage: "../images/nanas.png",
+    ejaan: "N-A-N-A-S",
+    audioFile: "nanas.mp3",
+  },
+  obat: {
+    name: "Obat",
+    icon: "../images/obat.png",
+    referenceImage: "../images/obat.png",
+    ejaan: "O-B-A-T",
+    audioFile: "obat.mp3",
+  },
+  pisang: {
+    name: "Pisang",
+    icon: "../images/pisang.png",
+    referenceImage: "../images/pisang.png",
+    ejaan: "P-I-S-A-N-G",
+    audioFile: "pisang.mp3",
+  },
+  kertas: {
+    name: "Kertas",
+    icon: "../images/placeholder.png",
+    referenceImage: "../images/placeholder.png",
+    ejaan: "K-E-R-T-A-S",
+    audioFile: "kertas.mp3",
+  },
+  rumah: {
+    name: "Rumah",
+    icon: "../images/rumah.png",
+    referenceImage: "../images/rumah.png",
+    ejaan: "R-U-M-A-H",
+    audioFile: "rumah.mp3",
+  },
+  sepatu: {
+    name: "Sepatu",
+    icon: "../images/sepatu.png",
+    referenceImage: "../images/sepatu.png",
+    ejaan: "S-E-P-A-T-U",
+    audioFile: "sepatu.mp3",
+  },
+  topi: {
+    name: "Topi",
+    icon: "../images/topi.png",
+    referenceImage: "../images/topi.png",
+    ejaan: "T-O-P-I",
+    audioFile: "topi.mp3",
+  },
+  udang: {
+    name: "Udang",
+    icon: "../images/udang.png",
+    referenceImage: "../images/udang.png",
+    ejaan: "U-D-A-N-G",
+    audioFile: "udang.mp3",
+  },
+  vas_bunga: {
+    name: "Vas Bunga",
+    icon: "../images/vas.png",
+    referenceImage: "../images/vas.png",
+    ejaan: "V-A-S-B-U-N-G-A",
+    audioFile: "vas_bunga.mp3",
+  },
+  wajan: {
+    name: "Wajan",
+    icon: "../images/wajan.png",
+    referenceImage: "../images/wajan.png",
+    ejaan: "W-A-J-A-N",
+    audioFile: "wajan.mp3",
+  },
+  xray: {
+    name: "X-ray",
+    icon: "../images/xray.png",
+    referenceImage: "../images/xray.png",
+    ejaan: "X-R-A-Y",
+    audioFile: "xray.mp3",
+  },
+  yoyo: {
+    name: "Yoyo",
+    icon: "../images/yoyo.png",
+    referenceImage: "../images/yoyo.png",
+    ejaan: "Y-O-Y-O",
+    audioFile: "yoyo.mp3",
+  },
+  zebra: {
+    name: "Zebra",
+    icon: "../images/zebra.png",
+    referenceImage: "../images/zebra.png",
+    ejaan: "Z-E-B-R-A",
+    audioFile: "zebra.mp3",
   },
 };
 
@@ -422,8 +556,8 @@ function playBendaAudio() {
   // Stop any playing audio first
   stopAllAudio();
 
-  // Try to play MP3 file first
-  const audioPath = `../audio/${currentBenda}.mp3`;
+  // Use audioFile from bendaData to build path
+  const audioPath = `../sounds/${bendaInfo.audioFile}`;
   currentAudio = new Audio(audioPath);
 
   currentAudio.onerror = function () {
