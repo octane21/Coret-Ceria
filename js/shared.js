@@ -42,11 +42,24 @@ function initBackgroundMusic() {
   if (existingAudio) {
     // Gunakan audio element yang sudah ada (dari halaman sebelumnya)
     backgroundMusicAudio = existingAudio;
-    console.log("Reusing existing background music audio element");
+    console.log("✅ Reusing existing background music audio element");
+    console.log(
+      "🎵 Current time:",
+      backgroundMusicAudio.currentTime.toFixed(2) + "s",
+    );
+
+    // JANGAN restart jika sudah playing
+    if (!backgroundMusicAudio.paused) {
+      console.log("✅ Musik sudah playing, lanjut dari posisi sebelumnya");
+      // Update button state dan return
+      updateMusicButton();
+      return;
+    }
   } else {
     // Buat audio element baru jika belum ada
     backgroundMusicAudio = new Audio();
     backgroundMusicAudio.id = "persistentBackgroundMusic";
+    backgroundMusicAudio.preload = "auto";
 
     // Tentukan path yang benar berdasarkan lokasi halaman saat ini
     const isInActivity = window.location.pathname.includes("/activities/");
@@ -57,28 +70,40 @@ function initBackgroundMusic() {
     backgroundMusicAudio.src = musicPath;
     backgroundMusicAudio.loop = true;
     backgroundMusicAudio.volume = 0.3; // Volume 30%
+
+    // Append ke body agar persist antar halaman
     document.body.appendChild(backgroundMusicAudio);
-    console.log("Created new background music audio element");
+    console.log(
+      "📢 Created new background music audio element with path:",
+      musicPath,
+    );
   }
 
   // Load preferences dari localStorage
   const savedMusicState = localStorage.getItem("backgroundMusicEnabled");
   if (savedMusicState !== null) {
     backgroundMusicEnabled = JSON.parse(savedMusicState);
+  } else {
+    // Default: musik harus ON saat pertama kali
+    backgroundMusicEnabled = true;
+    localStorage.setItem("backgroundMusicEnabled", "true");
   }
 
   // Update button state
   updateMusicButton();
 
-  // Mulai putar musik (jika belum ada yang diputar)
+  // Mulai putar musik JIKA:
+  // 1. Musik di-enable
+  // 2. Audio masih paused (belum diplay)
   if (backgroundMusicEnabled && backgroundMusicAudio.paused) {
+    console.log("▶️ Starting background music playback...");
     playBackgroundMusic();
   }
 
   // Mark sebagai initialized
   if (!musicInitialized) {
     musicInitialized = true;
-    console.log("Background music system initialized");
+    console.log("✅ Background music system initialized");
   }
 }
 
@@ -88,10 +113,22 @@ function initBackgroundMusic() {
 function playBackgroundMusic() {
   if (backgroundMusicAudio && backgroundMusicEnabled) {
     const playPromise = backgroundMusicAudio.play();
+
     if (playPromise !== undefined) {
-      playPromise.catch((err) => {
-        console.log("Autoplay blocked or error:", err);
-      });
+      playPromise
+        .then(() => {
+          console.log("✅ Music playing successfully");
+        })
+        .catch((err) => {
+          console.log("⚠️ Autoplay blocked or error:", err.message);
+          // Retry dengan muted attribute
+          if (backgroundMusicAudio) {
+            backgroundMusicAudio.muted = false;
+            backgroundMusicAudio.play().catch((e) => {
+              console.log("❌ Music play failed:", e.message);
+            });
+          }
+        });
     }
   }
 }

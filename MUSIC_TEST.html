@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music System Testing</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+
+      .test-section {
+        background: white;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .test-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .test-status {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 12px;
+      }
+
+      .status-ok {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .status-warning {
+        background: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeaa7;
+      }
+
+      .status-error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 4px;
+        background: #007bff;
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+
+      .console-log {
+        background: #222;
+        color: #0f0;
+        padding: 15px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        font-size: 12px;
+        max-height: 400px;
+        overflow-y: auto;
+        margin-top: 10px;
+      }
+
+      .log-line {
+        margin: 5px 0;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎵 Music System Testing Dashboard</h1>
+
+    <div class="test-section">
+      <div class="test-title">1. Audio Element Status</div>
+      <div class="test-status" id="audioStatus">Loading...</div>
+      <button onclick="checkAudioElement()">Check Audio Element</button>
+    </div>
+
+    <div class="test-section">
+      <div class="test-title">2. Music State</div>
+      <div class="test-status" id="musicState">Loading...</div>
+      <button onclick="checkMusicState()">Check Music State</button>
+    </div>
+
+    <div class="test-section">
+      <div class="test-title">3. Storage State</div>
+      <div class="test-status" id="storageState">Loading...</div>
+      <button onclick="checkStorageState()">Check Storage</button>
+    </div>
+
+    <div class="test-section">
+      <div class="test-title">4. Control Music</div>
+      <button onclick="playMusic()">▶️ Play</button>
+      <button onclick="pauseMusic()">⏸️ Pause</button>
+      <button onclick="toggleMusic()">🔄 Toggle</button>
+      <button onclick="muteMusic()">🔇 Mute</button>
+      <button onclick="unmuteMusic()">🔊 Unmute</button>
+      <button onclick="setVolume50()">Volume 50%</button>
+      <button onclick="resetMusicState()">🔄 Reset State</button>
+    </div>
+
+    <div class="test-section">
+      <div class="test-title">5. Navigation Test</div>
+      <a href="../index.html" target="_blank">
+        <button>📄 Go to Index</button>
+      </a>
+      <a href="../activities/bermain.html" target="_blank">
+        <button>🎮 Go to Bermain</button>
+      </a>
+      <a href="../activities/benda.html" target="_blank">
+        <button>🐘 Go to Benda</button>
+      </a>
+      <p>
+        <strong>Instructions:</strong> Open links, music should continue
+        playing!
+      </p>
+    </div>
+
+    <div class="test-section">
+      <div class="test-title">6. Console Log</div>
+      <div class="console-log" id="consoleLogs"></div>
+    </div>
+
+    <script>
+      // Override console.log
+      const consoleLogs = document.getElementById("consoleLogs");
+      const originalLog = console.log;
+      console.log = function (...args) {
+        originalLog.apply(console, args);
+        const logLine = document.createElement("div");
+        logLine.className = "log-line";
+        logLine.textContent = args.join(" ");
+        consoleLogs.appendChild(logLine);
+        consoleLogs.scrollTop = consoleLogs.scrollHeight;
+      };
+
+      function checkAudioElement() {
+        const status = document.getElementById("audioStatus");
+        const audio = document.getElementById("persistentBackgroundMusic");
+
+        if (audio) {
+          status.className = "test-status status-ok";
+          status.innerHTML = `
+                    ✅ <strong>Audio Element Found</strong><br>
+                    ID: persistentBackgroundMusic<br>
+                    Src: ${audio.src}<br>
+                    Loop: ${audio.loop}<br>
+                    Volume: ${audio.volume}
+                `;
+        } else {
+          status.className = "test-status status-warning";
+          status.innerHTML = "⚠️ Audio element not found yet";
+        }
+      }
+
+      function checkMusicState() {
+        const status = document.getElementById("musicState");
+
+        if (window.backgroundMusicAudio) {
+          const isPlaying = !window.backgroundMusicAudio.paused;
+          const currentTime =
+            window.backgroundMusicAudio.currentTime.toFixed(2);
+
+          status.className = isPlaying
+            ? "test-status status-ok"
+            : "test-status status-warning";
+          status.innerHTML = `
+                    ${isPlaying ? "▶️" : "⏸️"} <strong>Music State</strong><br>
+                    Playing: ${isPlaying}<br>
+                    Enabled: ${window.backgroundMusicEnabled}<br>
+                    Current Time: ${currentTime}s<br>
+                    Duration: ${window.backgroundMusicAudio.duration.toFixed(2)}s
+                `;
+        } else {
+          status.className = "test-status status-error";
+          status.innerHTML = "❌ Background music audio not initialized";
+        }
+      }
+
+      function checkStorageState() {
+        const status = document.getElementById("storageState");
+
+        const localEnabled = localStorage.getItem("backgroundMusicEnabled");
+        const sessionTime = sessionStorage.getItem("musicCurrentTime");
+        const sessionPlaying = sessionStorage.getItem("musicPlaying");
+
+        status.className = "test-status status-ok";
+        status.innerHTML = `
+                <strong>localStorage:</strong><br>
+                backgroundMusicEnabled: ${localEnabled || "not set"}<br>
+                <br>
+                <strong>sessionStorage:</strong><br>
+                musicCurrentTime: ${sessionTime || "not set"}<br>
+                musicPlaying: ${sessionPlaying || "not set"}
+            `;
+      }
+
+      function playMusic() {
+        if (window.backgroundMusicAudio) {
+          window.backgroundMusicAudio.play();
+          console.log("▶️ Play requested");
+          checkMusicState();
+        }
+      }
+
+      function pauseMusic() {
+        if (window.backgroundMusicAudio) {
+          window.backgroundMusicAudio.pause();
+          console.log("⏸️ Pause requested");
+          checkMusicState();
+        }
+      }
+
+      function toggleMusic() {
+        if (window.toggleBackgroundMusic) {
+          window.toggleBackgroundMusic();
+          console.log("🔄 Toggle requested");
+          checkMusicState();
+        }
+      }
+
+      function muteMusic() {
+        if (window.backgroundMusicAudio) {
+          window.backgroundMusicAudio.muted = true;
+          console.log("🔇 Mute requested");
+          checkMusicState();
+        }
+      }
+
+      function unmuteMusic() {
+        if (window.backgroundMusicAudio) {
+          window.backgroundMusicAudio.muted = false;
+          console.log("🔊 Unmute requested");
+          checkMusicState();
+        }
+      }
+
+      function setVolume50() {
+        if (window.backgroundMusicAudio) {
+          window.backgroundMusicAudio.volume = 0.5;
+          console.log("🔊 Volume set to 50%");
+          checkMusicState();
+        }
+      }
+
+      function resetMusicState() {
+        localStorage.clear();
+        sessionStorage.clear();
+        console.log("🔄 Storage cleared");
+        checkStorageState();
+      }
+
+      // Initial checks
+      window.addEventListener("load", () => {
+        console.log("=== MUSIC SYSTEM TESTING DASHBOARD ===");
+        checkAudioElement();
+        checkMusicState();
+        checkStorageState();
+
+        // Auto-check every 2 seconds
+        setInterval(() => {
+          checkMusicState();
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

@@ -678,6 +678,20 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.tic-tac-toe-main{
+  font-family: "Fredoka", sans-serif;
+}
+
+.activity-content .btn-reset{
+  font-family: "Fredoka", sans-serif;
+  font-weight: bold;
+}
+.tic-tac-toe-header {
+  margin-top: 50px;
+  box-shadow: none;
+  background: none;
+}
+
 .activity-header h2 {
   flex: 1;
   text-align: center;
@@ -706,6 +720,11 @@ body {
   padding: 40px;
   height: calc(100% - 80px);
   overflow-y: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
 }
 
 /* ===== BELAJAR HURUF ===== */
@@ -1016,7 +1035,7 @@ body {
 
   /* font-family: ; */
 }
-.susun-main{
+.susun-main {
   padding: 0;
 }
 .benda-spelling-screen {
@@ -1097,8 +1116,8 @@ body {
   gap: 8px;
 }
 .benda-syllable.first {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    text-transform:uppercase ;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  text-transform: uppercase;
 }
 
 .syllable-separator {
@@ -1120,7 +1139,7 @@ body {
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-    font-family: "Fredoka", sans-serif;
+  font-family: "Fredoka", sans-serif;
 
   margin-bottom: 10px;
 }
@@ -1414,6 +1433,10 @@ body {
   /* padding: 40px 20px; */
 }
 
+.pengisi {
+  visibility: hidden;
+  display: none;
+}
 .bermain-screen {
   /* display: flex;
   flex-direction: column;
@@ -1769,7 +1792,6 @@ body {
   /* font-family: "Fredoka", sans-serif; */
   font-family: "Fredoka", sans-serif;
 
-
   transition: all 0.1s ease;
   display: flex;
   align-items: center;
@@ -2007,6 +2029,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   max-width: 350px;
+  width: 100%;
   margin: 40px auto;
   padding: 20px;
   background: #f8f9fa;
@@ -2571,18 +2594,15 @@ body {
     width: 400px;
   }
   .letters-grid-container {
- 
-  min-width: 500px;
-bottom:-43%;
-padding: 10px 10px 0 10px;
-}
-
+    min-width: 500px;
+    bottom: -43%;
+    padding: 10px 10px 0 10px;
+  }
 
   .header-banner.centered {
     top: 25%;
   }
 
-  
   .char-container {
     right: 5%;
   }
@@ -2654,8 +2674,8 @@ padding: 10px 10px 0 10px;
 /* Media Query untuk dibawah 760px */
 @media (max-width: 760px) {
   .materi-main {
-  background-image: url(../images/backgroun2-480.png);
-}
+    background-image: url(../images/backgroun2-480.png);
+  }
 
   /* Letters Banner Adjustments */
   .letters-main .banner-box {
@@ -2699,7 +2719,6 @@ padding: 10px 10px 0 10px;
     height: 35px;
   }
 
-
   .letters-switch-container {
     margin-bottom: 15px;
   }
@@ -2716,7 +2735,6 @@ padding: 10px 10px 0 10px;
 
 /* Media Query 760px untuk BENDA */
 @media (max-width: 760px) {
-  
   /* Benda Display Board Adjustments */
   .benda-display-board {
     width: 320px;
@@ -2734,16 +2752,16 @@ padding: 10px 10px 0 10px;
   }
 
   .btn-activity-belajar,
-.btn-activity-materi{
-  font-size: 15px;
-  /* padding: 0; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  /* align-items: center; */
-  text-align: center;
-}
+  .btn-activity-materi {
+    font-size: 15px;
+    /* padding: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* align-items: center; */
+    text-align: center;
+  }
   .benda-display-board .benda-besar {
     font-size: 65px;
     animation:
@@ -2799,25 +2817,23 @@ padding: 10px 10px 0 10px;
 }
 
 @media (max-width: 480px) {
-
   .bermain-main {
-  background-image: url("../images/backgroun3-480.png");
-}
+    background-image: url("../images/backgroun3-480.png");
+  }
 
-.materi-cards-container {
-  display: flex;
-  gap: 50px;
-  justify-content: center;
-  align-items:end;
-  margin: 0px auto;
-}
-
+  .materi-cards-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: end;
+    margin: 0px auto;
+  }
 
   .banner-box {
     width: 300px;
-     align-items: center;
+    align-items: center;
     justify-self: center;
-    display: flex; 
+    display: flex;
     padding: 0 20px;
     min-height: 200px;
     /* text-align: center; 
@@ -2830,30 +2846,30 @@ padding: 10px 10px 0 10px;
 .btn-activity-materi{
   font-size: 15px;
   /* padding: 0; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  /* align-items: center; */
-  text-align: center;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* align-items: center; */
+    text-align: center;
+  }
 
-/* .letters-screen .banner-box{
+  /* .letters-screen .banner-box{
   padding: 0;
 } */
- .letters-grid-container {
-  min-width: 100px;
-bottom:-43%;
-padding: 10px 10px 0 10px;
-/* font-size: 10px; */
-}
+  .letters-grid-container {
+    min-width: 100px;
+    bottom: -43%;
+    padding: 10px 10px 0 10px;
+    /* font-size: 10px; */
+  }
 
-.letters-grid-container .huruf-btn {
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-}
-/* .materi-card { */
+  .letters-grid-container .huruf-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+  /* .materi-card { */
   /* background: white; */
   /* border: 8px solid #ffd700; */
   /* border-radius: 25px; */
@@ -2871,12 +2887,12 @@ padding: 10px 10px 0 10px;
   /* position: relative; */
   /* background-color: #333; */
   /* overflow: hidden; */
-/* } */
-.materi-main {
-  background-image: url(../images/backgroun2-480.png);
-}
+  /* } */
+  .materi-main {
+    background-image: url(../images/backgroun2-480.png);
+  }
 
-.char-container {
+  .char-container {
     right: 1%;
     /* width: 100px; */
   }
@@ -3503,7 +3519,7 @@ padding: 10px 10px 0 10px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
-    font-family: "Fredoka", sans-serif;
+  font-family: "Fredoka", sans-serif;
 
   box-shadow:
     0 8px 15px rgba(0, 0, 0, 0.2),
@@ -3635,7 +3651,7 @@ padding: 10px 10px 0 10px;
   }
 
   .materi-card {
-    width: 100%; 
+    width: 100%;
   }
 
   .card-icon {
@@ -3675,18 +3691,29 @@ padding: 10px 10px 0 10px;
   }
 
   .bermain-cards-container {
-    gap: 30px;
-    padding: 0 15px;
+    /* gap: 30px; */
+    padding: 0;
+    margin-bottom: 20px;
+    gap: 0px;
   }
 
   .bermain-card {
-    width: 180px;
-    height: 290px;
-  }
-
-  .card-icon {
-    width: 100%;
     height: 100%;
+    width: 100%;
+    padding: 0px;
+  }
+  .bermain-card p {
+    font-size: 15px;
+  }
+  .card-icon {
+    /* background-color: #00f2fe; */
+    /* border: 1px solid black; */
+    width: 100%;
+    padding: 0px;
+  }
+  .card-icon img {
+    width: 80%;
+    /* height: 100%; */
   }
 
   .card-title {
@@ -5271,5 +5298,221 @@ padding: 10px 10px 0 10px;
   .nav-menu .btn-nav {
     width: 50px;
     height: 50px;
+  }
+}
+
+/* ===== GAME COMPLETION MODAL (TIC TAC TOE) ===== */
+.game-completion-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+.game-completion-modal.active {
+  display: flex;
+  pointer-events: auto;
+}
+
+.game-completion-modal .modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.game-completion-modal .modal-content {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border: 8px solid #ff8c00;
+  border-radius: 30px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    inset 0 2px 5px rgba(255, 255, 255, 0.3);
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.game-completion-modal .game-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.game-completion-modal .modal-header {
+  text-align: center;
+  border-bottom: 3px solid #ff8c00;
+  padding-bottom: 15px;
+}
+
+.game-completion-modal .modal-header h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.game-completion-modal .modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.game-completion-modal #resultIcon {
+  font-size: 80px;
+  animation: bounce 1.2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.game-completion-modal #resultMessage {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff4444;
+  margin: 10px 0 0 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.game-completion-modal #resultDetails {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.game-completion-modal .modal-footer {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.game-completion-modal .btn-modal {
+  flex: 1;
+  min-width: 140px;
+  padding: 15px 25px;
+  border-radius: 20px;
+  border: 3px solid white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: "Fredoka", sans-serif;
+}
+
+.game-completion-modal .btn-primary {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+}
+
+.game-completion-modal .btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(78, 205, 196, 0.5);
+  filter: brightness(1.1);
+}
+
+.game-completion-modal .btn-primary:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(78, 205, 196, 0.4);
+}
+
+.game-completion-modal .btn-secondary {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff4444 100%);
+  color: white;
+}
+
+.game-completion-modal .btn-secondary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(255, 68, 68, 0.5);
+  filter: brightness(1.1);
+}
+
+.game-completion-modal .btn-secondary:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 68, 68, 0.4);
+}
+
+/* Responsive Design untuk Game Modal */
+@media (max-width: 768px) {
+  .game-completion-modal .modal-content {
+    padding: 30px;
+    border-width: 6px;
+  }
+
+  .game-completion-modal .modal-header h2 {
+    font-size: 28px;
+  }
+
+  .game-completion-modal #resultIcon {
+    font-size: 60px;
+  }
+
+  .game-completion-modal #resultMessage {
+    font-size: 22px;
+  }
+
+  .game-completion-modal #resultDetails {
+    font-size: 14px;
+  }
+
+  .game-completion-modal .btn-modal {
+    padding: 12px 20px;
+    font-size: 14px;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-completion-modal .modal-content {
+    padding: 25px;
+    border-width: 5px;
+    gap: 15px;
+  }
+
+  .game-completion-modal .modal-header h2 {
+    font-size: 24px;
+  }
+
+  .game-completion-modal #resultIcon {
+    font-size: 50px;
+  }
+
+  .game-completion-modal #resultMessage {
+    font-size: 18px;
+  }
+
+  .game-completion-modal .modal-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .game-completion-modal .btn-modal {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 13px;
   }
 }

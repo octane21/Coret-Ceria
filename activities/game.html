@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Permainan - Coret Ceria</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- SIDEBAR NAVIGASI BARU - VERTIKAL -->
@@ -17,7 +25,6 @@
       <!-- Navigation menu container -->
       <div class="nav-menu" id="navMenu">
         <button class="btn-nav btn-home" title="Rumah">🏠</button>
-        <button class="btn-nav btn-sound" title="Suara Aktif">🔊</button>
         <button
           class="btn-nav btn-music music-playing"
           id="musicToggle"
@@ -31,11 +38,11 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <main class="main-content">
+    <main class="main-content tic-tac-toe-main">
       <!-- PERMAINAN (TIC TAC TOE) ACTIVITY -->
-      <section class="screen active" id="gameScreen">
-        <div class="activity-header">
-          <h2>🎮 Permainan</h2>
+      <section id="gameScreen">
+        <div class="activity-header tic-tac-toe-header">
+          <h2 class="cartoon-font">Tic Tac Toe</h2>
         </div>
 
         <div class="activity-content">
@@ -50,7 +57,32 @@
             <div class="game-cell" data-index="7"></div>
             <div class="game-cell" data-index="8"></div>
           </div>
-          <button class="btn-reset">🔄 Main Lagi</button>
+          <button class="btn-reset">Ulang</button>
+        </div>
+
+        <!-- GAME COMPLETION MODAL -->
+        <div class="game-completion-modal" id="gameCompletionModal">
+          <div class="modal-overlay"></div>
+          <div class="modal-content game-modal">
+            <div class="modal-header">
+              <h2 id="modalTitle">Permainan Selesai!</h2>
+            </div>
+
+            <div class="modal-body">
+              <div class="game-result-icon" id="resultIcon">🎉</div>
+              <p id="resultMessage">Selamat! Anda menang!</p>
+              <p id="resultDetails" class="result-details"></p>
+            </div>
+
+            <div class="modal-footer">
+              <button class="btn-modal btn-primary" id="btnPlayAgain">
+                ▶ Main Lagi
+              </button>
+              <button class="btn-modal btn-secondary" id="btnBackToBermain">
+                ← Kembali ke Menu
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>

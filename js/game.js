@@ -25,10 +25,26 @@ function initGame() {
     cell.addEventListener("click", () => handleCellClick(index));
   });
 
-  // Reset button
+  // Reset button di game screen
   const resetBtn = document.querySelector("#gameScreen .btn-reset");
   if (resetBtn) {
     resetBtn.addEventListener("click", resetGame);
+  }
+
+  // Modal button listeners
+  const btnPlayAgain = document.getElementById("btnPlayAgain");
+  if (btnPlayAgain) {
+    btnPlayAgain.addEventListener("click", () => {
+      closeGameResultModal();
+      resetGame();
+    });
+  }
+
+  const btnBackToBermain = document.getElementById("btnBackToBermain");
+  if (btnBackToBermain) {
+    btnBackToBermain.addEventListener("click", () => {
+      window.location.href = "bermain.html";
+    });
   }
 }
 
@@ -50,6 +66,8 @@ function updateCell(index) {
 }
 
 function checkWin() {
+  let winner = null;
+
   for (let pattern of winPatterns) {
     const [a, b, c] = pattern;
     if (
@@ -58,14 +76,50 @@ function checkWin() {
       gameBoard[a] === gameBoard[c]
     ) {
       gameActive = false;
-      showReward();
+      winner = gameBoard[a];
+      showGameResult(winner, "win");
       break;
     }
   }
 
+  // Check untuk draw (jika tidak ada winner dan semua cell penuh)
   if (gameBoard.every((cell) => cell !== "") && gameActive) {
     gameActive = false;
-    console.log("Draw!");
+    showGameResult(null, "draw");
+  }
+}
+
+function showGameResult(winner, resultType) {
+  const modal = document.getElementById("gameCompletionModal");
+  const resultIcon = document.getElementById("resultIcon");
+  const resultMessage = document.getElementById("resultMessage");
+  const resultDetails = document.getElementById("resultDetails");
+
+  if (resultType === "win") {
+    // Someone won
+    resultIcon.textContent = "🏆";
+    resultMessage.textContent = `🎉 Pemain ${winner} Menang! 🎉`;
+    // resultDetails.textContent = "Selamat! Anda berhasil mengalahkan lawan!";
+  } else if (resultType === "draw") {
+    // Draw
+    resultIcon.textContent = "🤝";
+    resultMessage.textContent = "Seri!";
+    resultDetails.textContent = "Permainan berakhir dengan seri!";
+  }
+
+  // Tampilkan modal dengan delay kecil
+  setTimeout(() => {
+    if (modal) {
+      modal.classList.add("active");
+      console.log("Game result modal shown");
+    }
+  }, 500);
+}
+
+function closeGameResultModal() {
+  const modal = document.getElementById("gameCompletionModal");
+  if (modal) {
+    modal.classList.remove("active");
   }
 }
 
@@ -76,7 +130,11 @@ function resetGame() {
 
   document.querySelectorAll(".game-cell").forEach((cell) => {
     cell.textContent = "";
+    cell.style.color = "";
   });
+
+  // Close modal jika ada
+  closeGameResultModal();
 }
 
 console.log("Game.js loaded!");

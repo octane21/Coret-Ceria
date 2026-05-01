@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initSidebar() {
+  console.log("🎯 Initializing sidebar...");
+
   // Setup hamburger toggle button for mobile
   const hamburgerBtn = document.getElementById("hamburgerToggle");
   const navMenu = document.getElementById("navMenu");
@@ -25,20 +27,21 @@ function initSidebar() {
     });
   }
 
-  // Initialize background music for activity pages
-  initBackgroundMusic();
-
-  // Setup music button
-  const musicBtn = document.getElementById("musicToggle");
-  if (musicBtn) {
-    musicBtn.addEventListener("click", toggleBackgroundMusic);
+  // Initialize background music - CRITICAL
+  // Pastikan musik sudah ada sebelum setup button
+  if (window.initBackgroundMusic) {
+    window.initBackgroundMusic();
+    console.log("✅ Background music initialized from sidebar");
   }
 
-  // Setup sound button
-  const soundBtn = document.querySelector(".btn-nav.btn-sound");
-  if (soundBtn) {
-    soundBtn.addEventListener("click", toggleSound);
-    updateSoundButtonState();
+  // Setup music button - HARUS setelah initBackgroundMusic
+  const musicBtn = document.getElementById("musicToggle");
+  if (musicBtn) {
+    musicBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("🎵 Music toggle clicked");
+      window.toggleBackgroundMusic();
+    });
   }
 
   // Setup home button
@@ -52,24 +55,8 @@ function initSidebar() {
   if (backBtn) {
     backBtn.addEventListener("click", () => goBack());
   }
-}
 
-function toggleSound() {
-  isSoundMuted = !isSoundMuted;
-  updateSoundButtonState();
-
-  // If sound is muted, stop any playing audio
-  if (isSoundMuted) {
-    stopAllAudio();
-  }
-}
-
-function updateSoundButtonState() {
-  const soundBtn = document.querySelector(".btn-nav.btn-sound");
-  if (soundBtn) {
-    soundBtn.textContent = isSoundMuted ? "🔇" : "🔊";
-    soundBtn.title = isSoundMuted ? "Suara Mati" : "Suara Aktif";
-  }
+  console.log("✅ Sidebar initialized");
 }
 
 function stopAllAudio() {
