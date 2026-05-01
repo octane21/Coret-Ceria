@@ -129,7 +129,7 @@
   min-width: 100px;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  /* gap: 10px; */
   /* padding: 20px; */
   background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
   border: 3px solid #667eea;
@@ -209,77 +209,77 @@
 
 .drawing-benda-item:nth-child(9) {
   animation-delay: 0.1s;
-  --rotate-angle: -3deg;
+  --rotate-angle: 3deg;
 }
 .drawing-benda-item:nth-child(10) {
   animation-delay: 0.15s;
-  --rotate-angle: 2deg;
+  --rotate-angle: -2deg;
 }
 .drawing-benda-item:nth-child(11) {
   animation-delay: 0.2s;
-  --rotate-angle: -2deg;
+  --rotate-angle: 2deg;
 }
 .drawing-benda-item:nth-child(12) {
   animation-delay: 0.25s;
-  --rotate-angle: 3deg;
+  --rotate-angle: -3deg;
 }
 .drawing-benda-item:nth-child(13) {
   animation-delay: 0.3s;
-  --rotate-angle: -1deg;
+  --rotate-angle: 1deg;
 }
 .drawing-benda-item:nth-child(14) {
   animation-delay: 0.35s;
-  --rotate-angle: 2.5deg;
+  --rotate-angle: -2.5deg;
 }
 .drawing-benda-item:nth-child(15) {
   animation-delay: 0.4s;
-  --rotate-angle: -3.5deg;
+  --rotate-angle: 3.5deg;
 }
 .drawing-benda-item:nth-child(16) {
   animation-delay: 0.45s;
-  --rotate-angle: 1.5deg;
+  --rotate-angle: -1.5deg;
 }
 
 .drawing-benda-item:nth-child(17) {
   animation-delay: 0.1s;
-  --rotate-angle: -3deg;
+  --rotate-angle: -6deg;
 }
 .drawing-benda-item:nth-child(18) {
   animation-delay: 0.15s;
-  --rotate-angle: 2deg;
+  --rotate-angle: 4deg;
 }
 .drawing-benda-item:nth-child(19) {
   animation-delay: 0.2s;
-  --rotate-angle: -2deg;
+  --rotate-angle: -4deg;
 }
 .drawing-benda-item:nth-child(20) {
   animation-delay: 0.25s;
-  --rotate-angle: 3deg;
+  --rotate-angle: 6deg;
 }
 .drawing-benda-item:nth-child(21) {
   animation-delay: 0.3s;
-  --rotate-angle: -1deg;
+  --rotate-angle: -2deg;
 }
 .drawing-benda-item:nth-child(22) {
   animation-delay: 0.35s;
-  --rotate-angle: 2.5deg;
+  --rotate-angle: 5deg;
 }
 .drawing-benda-item:nth-child(23) {
   animation-delay: 0.4s;
-  --rotate-angle: -3.5deg;
+  --rotate-angle: 7deg;
 }
 .drawing-benda-item:nth-child(24) {
   animation-delay: 0.45s;
-  --rotate-angle: 1.5deg;
+  --rotate-angle: 3deg;
 }
 
 .drawing-benda-item:nth-child(25) {
   animation-delay: 0.1s;
-  --rotate-angle: -3deg;
+  --rotate-angle: -6deg;
 }
 .drawing-benda-item:nth-child(26) {
   animation-delay: 0.15s;
-  --rotate-angle: 2deg;
+  --rotate-angle: 4deg;
 }
 .drawing-benda-item:hover {
   transform: translateY(-15px) scale(1.08) rotate(0deg);
@@ -1123,11 +1123,15 @@
 @media (max-width: 480px) {
   .drawing-title {
     font-size: 20px;
+    /* margin-top: 200px; */
   }
 
-  .drawing-benda-icon img{
+  .drawing-title-board{
+    margin-top: 80px;
+  }
+  /* .drawing-benda-icon img{
     width: 60px;
-}
+} */
   .btn-back-drawing {
     width: 60px;
     height: 60px;
@@ -1135,11 +1139,12 @@
 
   .drawing-benda-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 20px;
+    /* pad */
   }
 
   .drawing-benda-item {
-    padding: 15px 10px;
+    padding: 0;
   }
 
   .drawing-benda-icon {
@@ -1229,6 +1234,23 @@
   }
 }
 
+
+/* @media (max-width: 460px) {
+
+  .drawing-benda-icon img{
+    width: 60px;
+}
+  .btn-back-drawing {
+    width: 60px;
+    height: 60px;
+  }
+
+  .drawing-benda-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+} */
 /* ========================================
    MODAL BENDA STYLING (Ejaan & Icon)
    ======================================== */
