@@ -115,12 +115,12 @@ const bendaData = {
     ejaan: "P-I-S-A-N-G",
     audioFile: "pisang.mp3",
   },
-  kertas: {
-    name: "Kertas",
-    icon: "../images/placeholder.png",
-    referenceImage: "../images/placeholder.png",
-    ejaan: "K-E-R-T-A-S",
-    audioFile: "kertas.mp3",
+  quiz: {
+    name: "quiz",
+    icon: "../images/quiz.png",
+    referenceImage: "../images/quiz.png",
+    ejaan: "Q-U-I-Z",
+    audioFile: "quiz.mp3",
   },
   rumah: {
     name: "Rumah",
