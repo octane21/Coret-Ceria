@@ -678,11 +678,11 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.tic-tac-toe-main{
+.tic-tac-toe-main {
   font-family: "Fredoka", sans-serif;
 }
 
-.activity-content .btn-reset{
+.activity-content .btn-reset {
   font-family: "Fredoka", sans-serif;
   font-weight: bold;
 }
@@ -1861,7 +1861,6 @@ body {
 .btn-switch-case {
   background-color: #269c05;
   position: relative;
-
   box-shadow:
     0 8px 0px #d84315,
     0 12px 15px rgba(0, 0, 0, 0.3);
@@ -1874,8 +1873,30 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-  /* text-transform: uppercase; */
+  display: flex;
+  align-items: center;
+  gap: 10px;
   letter-spacing: 0.5px;
+}
+
+.btn-switch-case .cycle-icon {
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+.btn-switch-case:hover .cycle-icon {
+  transform: rotate(180deg);
+}
+
+.btn-switch-case:active .cycle-icon {
+  transform: rotate(180deg) scale(0.9);
+}
+
+.btn-switch-case .switch-text {
+  display: inline;
 }
 
 .btn-switch-case::before {
@@ -2724,8 +2745,13 @@ body {
   }
 
   .btn-switch-case {
-    padding: 8px 16px;
-    font-size: 12px;
+    padding: 10px 18px;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .btn-switch-case .cycle-icon {
+    font-size: 16px;
   }
 
   .character-corner {

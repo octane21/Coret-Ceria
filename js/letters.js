@@ -87,6 +87,7 @@ function selectLetter(letter) {
 function switchLetterCase() {
   const grid = document.querySelector(".huruf-grid");
   const switchBtn = document.querySelector("#btnSwitchCase");
+  const switchText = document.querySelector(".switch-text");
 
   if (!grid || !switchBtn) return;
 
@@ -104,7 +105,7 @@ function switchLetterCase() {
       btn.addEventListener("click", () => selectLetter(letter));
       grid.appendChild(btn);
     });
-    switchBtn.textContent = "Huruf Besar";
+    if (switchText) switchText.textContent = "Huruf Besar";
   } else {
     // Show lowercase letters
     alphabet.lowercase.forEach((letter) => {
@@ -114,7 +115,7 @@ function switchLetterCase() {
       btn.addEventListener("click", () => selectLetter(letter));
       grid.appendChild(btn);
     });
-    switchBtn.textContent = "Huruf Kecil";
+    if (switchText) switchText.textContent = "Huruf Kecil";
   }
 
   // Select first letter based on current case
@@ -123,7 +124,7 @@ function switchLetterCase() {
 }
 
 function playLetterSound(letter) {
-  console.log(count)
+  console.log(count);
   // Check if sound is muted
   if (typeof canPlaySound === "function" && !canPlaySound()) {
     return;
@@ -131,8 +132,7 @@ function playLetterSound(letter) {
 
   // Convert to lowercase for file naming
   const letterLower = letter.toLowerCase();
-  if(count != 1){
-
+  if (count != 1) {
     // Create audio element if it doesn't exist
     let audio = document.getElementById("letterAudio");
     if (!audio) {
@@ -140,18 +140,17 @@ function playLetterSound(letter) {
       audio.id = "letterAudio";
       document.body.appendChild(audio);
     }
-    
+
     // Set source to mp3 file from sounds folder
     const soundPath = `../sounds/${letterLower}.mp3`;
     audio.src = soundPath;
     audio.volume = 1;
-    
-    // Play the audio
-  audio.play().catch((error) => {
-    console.log(`Error playing sound for letter ${letterLower}:`, error);
-  });
 
-}
+    // Play the audio
+    audio.play().catch((error) => {
+      console.log(`Error playing sound for letter ${letterLower}:`, error);
+    });
+  }
   // Visual feedback
   const btn = document.querySelector(".btn-suara");
   if (btn) {
