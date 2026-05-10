@@ -104,7 +104,7 @@ function switchLetterCase() {
       btn.addEventListener("click", () => selectLetter(letter));
       grid.appendChild(btn);
     });
-    switchBtn.textContent = "Huruf Kecil";
+    switchBtn.textContent = "Huruf Besar";
   } else {
     // Show lowercase letters
     alphabet.lowercase.forEach((letter) => {
@@ -114,7 +114,7 @@ function switchLetterCase() {
       btn.addEventListener("click", () => selectLetter(letter));
       grid.appendChild(btn);
     });
-    switchBtn.textContent = "Huruf Besar";
+    switchBtn.textContent = "Huruf Kecil";
   }
 
   // Select first letter based on current case
