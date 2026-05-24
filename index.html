@@ -35,6 +35,7 @@
         >
           🎵
         </button>
+        <button class="btn-nav info-btn" id="infoToggle" title="Info">i</button>
       </div>
     </div>
 
@@ -111,9 +112,86 @@
     </main>
 
     <!-- SCRIPTS -->
+    <!-- INFO MODAL (ONLY ON INDEX) -->
+    <div id="infoModal" class="modal-info hidden" aria-hidden="true">
+      <div class="modal-info-overlay"></div>
+      <div
+        class="modal-info-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="infoModalTitle"
+      >
+      <div class="modal-info-button-wrapper">
+        <button class="modal-info-close" id="infoModalClose">×</button>
+      </div>
+        <div class="modal-info-header">
+          <h2 id="infoModalTitle">Tentang Coret Ceria</h2>
+        </div>
+        <div class="modal-info-body">
+          <p>
+            Coret Ceria merupakan platform digital interaktif yang dirancang
+            untuk mengenalkan abjad kepada anak usia dini serta anak dengan
+            kesulitan belajar (disleksia). Tidak hanya fokus pada pengenalan
+            abjad, website ini juga menyediakan fitur bagi anak untuk menuliskan
+            huruf dan menggambar ilustrasi kata berdasarkan abjad secara
+            kreatif. Selain itu, terdapat permainan susun kata edukatif yang
+            berfungsi untuk melatih kemampuan literasi anak dengan cara yang
+            menyenangkan.
+            
+            <br>
+            <br> 
+            Coret Ceria dibuat oleh
+            Kelompok 4 Jurusan Pendidikan Luar Biasa
+  <br> 1. Izzatulfitri (23003100) 
+  <br> 2. Hidayatul Islam (23003220)
+  <br> 3. Amelia Rizkiana Hidayah (23003065) 
+  <br> 4. Eiysha Fadillah Putri (23003084)
+
+  <br>
+  <br>
+  dan dikembangkan oleh Carli Tamba (23343031) Jurusan Informatika
+          </p>
+        </div>
+      </div>
+    </div>
+
     <script src="./js/shared.js"></script>
     <script src="./js/persistent-music.js"></script>
     <script src="./js/sidebar.js"></script>
     <script src="./js/main.js"></script>
+
+    <script>
+      // Info modal handler (index.html only)
+      document.addEventListener("DOMContentLoaded", function () {
+        const infoBtn = document.getElementById("infoToggle");
+        const infoModal = document.getElementById("infoModal");
+        const infoClose = document.getElementById("infoModalClose");
+
+        if (!infoBtn || !infoModal) return;
+
+        function openInfoModal() {
+          infoModal.classList.remove("hidden");
+          infoModal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeInfoModal() {
+          infoModal.classList.add("hidden");
+          infoModal.setAttribute("aria-hidden", "true");
+        }
+
+        infoBtn.addEventListener("click", openInfoModal);
+        infoClose && infoClose.addEventListener("click", closeInfoModal);
+
+        // Close when clicking the overlay/background
+        infoModal.addEventListener("click", function (e) {
+          if (
+            e.target === infoModal ||
+            e.target.classList.contains("modal-info-overlay")
+          ) {
+            closeInfoModal();
+          }
+        });
+      });
+    </script>
   </body>
 </html>
