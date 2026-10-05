@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menyusun Huruf A-Z - Alfabet Ceria</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/menyusun-az.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar-nav" id="sidebarNav">
+      <button class="btn-nav btn-hamburger" id="hamburgerToggle" title="Menu">
+        ☰
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <button class="btn-nav btn-home" title="Rumah">🏠</button>
+        <button
+          class="btn-nav btn-music music-playing"
+          id="musicToggle"
+          data-music-toggle
+          title="Musik Hidup (Klik untuk Matikan)"
+        >
+          🎵
+        </button>
+        <button class="btn-nav btn-back" title="Kembali">←</button>
+      </div>
+    </div>
+
+    <main class="main-content alphabet-sort-main">
+      <section class="alphabet-sort-page" aria-labelledby="alphabetSortTitle">
+        <header class="alphabet-sort-header">
+          <div>
+            <h1 id="alphabetSortTitle">Menyusun Huruf A-Z</h1>
+            <p>
+              Seret huruf ke posisi yang benar, mulai dari A sampai Z.
+            </p>
+          </div>
+          <img
+            class="alphabet-sort-placeholder"
+            src="../images/menyusun-az.png"
+            alt="Placeholder ilustrasi permainan; ganti file placeholder-alfabet.svg dengan gambar pilihan Anda"
+          />
+        </header>
+
+        <section class="alphabet-sort-board" aria-label="Papan susun huruf">
+          <div
+            class="alphabet-sort-tiles"
+            id="alphabetSortTiles"
+            aria-label="Huruf-huruf yang dapat disusun"
+          ></div>
+          <p
+            class="alphabet-sort-status"
+            id="alphabetSortStatus"
+            role="status"
+            aria-live="polite"
+          >
+            Seret huruf untuk menyusunnya dari A sampai Z.
+          </p>
+          <div class="alphabet-sort-actions">
+            <button
+              class="alphabet-sort-case-toggle"
+              id="toggleAlphabetCase"
+              type="button"
+              aria-pressed="true"
+            >
+              <span id="toggleAlphabetCaseText">Huruf Besar</span>
+              <span class="alphabet-sort-case-icon" aria-hidden="true">⟳</span>
+            </button>
+            <button class="alphabet-sort-button" id="checkAlphabetOrder">
+              Periksa Jawaban
+            </button>
+            <button
+              class="alphabet-sort-button alphabet-sort-button-secondary"
+              id="shuffleAlphabet"
+            >
+              Acak Ulang
+            </button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="../js/shared.js"></script>
+    <script src="../js/persistent-music.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/menyusun-az.js"></script>
+  </body>
+</html>

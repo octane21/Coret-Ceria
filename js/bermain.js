@@ -21,6 +21,13 @@ function initBermain() {
     });
   }
 
+  const cardSusunAZ = document.getElementById("cardSusunAZ");
+  if (cardSusunAZ) {
+    cardSusunAZ.addEventListener("click", () => {
+      window.location.href = "menyusun-az.html";
+    });
+  }
+
   // Event listener untuk card Tic Tac Toe
   const cardTicTacToe = document.getElementById("cardTicTacToe");
   if (cardTicTacToe) {
