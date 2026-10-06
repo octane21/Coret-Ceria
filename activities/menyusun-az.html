@@ -38,7 +38,7 @@
           <div>
             <h1 id="alphabetSortTitle">Menyusun Huruf A-Z</h1>
             <p>
-              Seret huruf ke posisi yang benar, mulai dari A sampai Z.
+              Klik balok huruf, lalu susun pada papan dari A sampai Z.
             </p>
           </div>
           <img
@@ -48,12 +48,29 @@
           />
         </header>
 
-        <section class="alphabet-sort-board" aria-label="Papan susun huruf">
-          <div
-            class="alphabet-sort-tiles"
-            id="alphabetSortTiles"
-            aria-label="Huruf-huruf yang dapat disusun"
-          ></div>
+        <div class="alphabet-sort-board">
+          <section
+            class="alphabet-sort-section"
+            aria-labelledby="alphabetSourceTitle"
+          >
+            <h2 id="alphabetSourceTitle">Pilih Balok Huruf</h2>
+            <div
+              class="alphabet-sort-tiles"
+              id="alphabetSortTiles"
+              aria-label="Balok huruf acak, klik untuk memilih"
+            ></div>
+          </section>
+          <section
+            class="alphabet-sort-section"
+            aria-labelledby="alphabetAnswerTitle"
+          >
+            <h2 id="alphabetAnswerTitle">Susun Huruf A-Z</h2>
+            <div
+              class="alphabet-sort-answer"
+              id="alphabetSortAnswer"
+              aria-label="Papan susunan jawaban"
+            ></div>
+          </section>
           <p
             class="alphabet-sort-status"
             id="alphabetSortStatus"
@@ -82,7 +99,7 @@
               Acak Ulang
             </button>
           </div>
-        </section>
+        </div>
       </section>
     </main>
 

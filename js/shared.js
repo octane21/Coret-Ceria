@@ -209,7 +209,6 @@ function navigateToActivity(activityName) {
     huruf: "activities/huruf.html",
     dots: "activities/dots.html",
     stiker: "activities/stiker.html",
-    game: "activities/game.html",
     materi: "activities/materi.html",
   };
 

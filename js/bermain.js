@@ -28,13 +28,6 @@ function initBermain() {
     });
   }
 
-  // Event listener untuk card Tic Tac Toe
-  const cardTicTacToe = document.getElementById("cardTicTacToe");
-  if (cardTicTacToe) {
-    cardTicTacToe.addEventListener("click", () => {
-      window.location.href = "game.html";
-    });
-  }
 }
 
 console.log("Bermain.js loaded!");

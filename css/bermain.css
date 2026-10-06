@@ -1,9 +1,11 @@
 .bermain-cards-container {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(12px, 3vw, 40px);
-  width: min(100%, 1040px);
+  width: min(100%, 900px);
   padding: 0 24px;
+  margin: 0 auto;
+  align-items: end;
 }
 
 .bermain-card {
@@ -42,14 +44,19 @@
 
 @media (max-width: 900px) {
   .bermain-cards-container {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    align-items: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 620px);
     gap: 16px;
     padding: 0 12px;
   }
 
   .bermain-card {
+    justify-self: center;
     height: 180px;
+  }
+
+  .bermain-card:last-child {
+    grid-column: 1 / -1;
   }
 
   .bermain-card .card-icon {
@@ -66,11 +73,12 @@
   }
 
   .bermain-card {
+    max-width: 170px;
     height: 150px;
   }
 
   .bermain-card p {
-    font-size: clamp(10px, 3vw, 12px);
+    font-size: clamp(12px, 3.5vw, 15px);
   }
 
   .bermain-card .card-icon img {
@@ -78,6 +86,7 @@
   }
 
   .bermain-card .card-icon {
+    /* margin-top: 30px; */
     height: 100px;
     flex-basis: 100px;
   }
